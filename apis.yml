@@ -4,8 +4,7 @@ description: >-
   Albato A Single No Code Platform For All Automations provides API capabilities.
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
-tags:
-  - API
+tags: []
 url: >-
   https://raw.githubusercontent.com/api-evangelist/albato-a-single-no-code-platform-for-all-automations/refs/heads/main/apis.yml
 created: '2026-03-16'
