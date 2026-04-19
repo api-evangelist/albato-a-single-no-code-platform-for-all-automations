@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/albato-a-single-no-code-platform-for-all-automations/refs/heads/main/json-schema/albato-albato-automations-automation-schema.json",
+  "title": "Automation",
+  "description": "An automation workflow connecting multiple apps",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique automation identifier"
+    },
+    "name": {
+      "type": "string",
+      "description": "Automation display name"
+    },
+    "description": {
+      "type": "string",
+      "description": "Automation description"
+    },
+    "status": {
+      "type": "string",
+      "description": "Automation status (active/inactive)"
+    },
+    "trigger_count": {
+      "type": "integer",
+      "description": "Total trigger count"
+    },
+    "success_count": {
+      "type": "integer",
+      "description": "Successful execution count"
+    },
+    "error_count": {
+      "type": "integer",
+      "description": "Error count"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

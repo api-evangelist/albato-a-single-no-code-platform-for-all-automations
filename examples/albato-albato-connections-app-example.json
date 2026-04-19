@@ -1,0 +1,9 @@
+{
+  "id": "abc123def456",
+  "name": "My Automation",
+  "category": "CRM",
+  "description": "A sample automation workflow",
+  "triggers_count": 42,
+  "actions_count": 42,
+  "icon_url": "https://albato.com/webhook/abc123"
+}

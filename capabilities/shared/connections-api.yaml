@@ -1,0 +1,130 @@
+naftiko: "1.0.0-alpha1"
+
+info:
+  label: Albato Connections API
+  description: >-
+    App connection and webhook management for the Albato no-code integration
+    platform, supporting 1,000+ app integrations.
+  tags:
+    - Albato
+    - Connections
+    - Webhooks
+    - App Integrations
+    - No-Code
+  created: "2026-04-19"
+  modified: "2026-04-19"
+
+binds:
+  - namespace: env
+    keys:
+      ALBATO_API_KEY: ALBATO_API_KEY
+
+capability:
+  consumes:
+    - type: http
+      namespace: albato-connections
+      baseUri: "https://albato.com/api/v1"
+      description: Albato Connections REST API
+      auth:
+        type: apiKey
+        header: Authorization
+        value: "{{env.ALBATO_API_KEY}}"
+      resources:
+        - name: connections
+          path: /connections
+          description: App connections
+          operations:
+            - name: list-connections
+              method: GET
+              description: List all app connections
+              outputParameters:
+                - name: connections
+                  type: object
+                  value: "$."
+            - name: get-connection
+              method: GET
+              description: Get a connection by ID
+              inputParameters:
+                - name: id
+                  type: string
+                  in: path
+              outputParameters:
+                - name: connection
+                  type: object
+                  value: "$."
+        - name: apps
+          path: /apps
+          description: Available app integrations
+          operations:
+            - name: list-apps
+              method: GET
+              description: List all available app integrations
+              inputParameters:
+                - name: search
+                  type: string
+                  in: query
+                - name: category
+                  type: string
+                  in: query
+              outputParameters:
+                - name: apps
+                  type: object
+                  value: "$."
+        - name: webhooks
+          path: /webhooks
+          description: Inbound webhook endpoints
+          operations:
+            - name: list-webhooks
+              method: GET
+              description: List all inbound webhooks
+              outputParameters:
+                - name: webhooks
+                  type: array
+                  value: "$."
+
+  exposes:
+    - type: rest
+      port: 8101
+      namespace: albato-connections-api
+      resources:
+        - path: /v1/connections
+          name: connections
+          operations:
+            - method: GET
+              name: list-connections
+              description: List app connections
+              call: "albato-connections.list-connections"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+    - type: mcp
+      port: 9101
+      namespace: albato-connections-mcp
+      transport: http
+      tools:
+        - name: list-albato-connections
+          description: List all app connections configured in Albato
+          hints:
+            readOnly: true
+            openWorld: false
+          call: "albato-connections.list-connections"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: list-albato-apps
+          description: Browse the 1,000+ available app integrations in Albato
+          hints:
+            readOnly: true
+            openWorld: false
+          call: "albato-connections.list-apps"
+          inputParameters:
+            - name: search
+              type: string
+              description: Search apps by name
+            - name: category
+              type: string
+              description: Filter by category
+          outputParameters:
+            - type: object
+              mapping: "$."

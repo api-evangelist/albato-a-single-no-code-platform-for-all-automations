@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-structure.org/meta/extended/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/albato-a-single-no-code-platform-for-all-automations/refs/heads/main/json-structure/albato-albato-connections-connection-structure.json",
+  "title": "Connection",
+  "description": "An app connection for authentication",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": ""
+    },
+    "app": {
+      "type": "string",
+      "description": "App identifier"
+    },
+    "name": {
+      "type": "string",
+      "description": "Connection display name"
+    },
+    "auth_type": {
+      "type": "string",
+      "description": "Authentication type"
+    },
+    "status": {
+      "type": "string",
+      "description": "Connection status"
+    },
+    "created_at": {
+      "type": "datetime",
+      "description": ""
+    },
+    "last_used_at": {
+      "type": "datetime",
+      "description": ""
+    }
+  }
+}

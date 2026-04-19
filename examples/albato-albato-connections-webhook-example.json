@@ -1,0 +1,7 @@
+{
+  "id": "abc123def456",
+  "name": "My Automation",
+  "description": "A sample automation workflow",
+  "url": "https://albato.com/webhook/abc123",
+  "created_at": "2026-04-19T12:00:00Z"
+}

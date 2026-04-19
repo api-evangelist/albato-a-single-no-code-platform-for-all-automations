@@ -1,0 +1,155 @@
+naftiko: "1.0.0-alpha1"
+
+info:
+  label: Albato Automations API
+  description: >-
+    Automation workflow management for the Albato no-code integration platform,
+    supporting creation, management, and monitoring of multi-step automations.
+  tags:
+    - Albato
+    - Automation
+    - Workflow
+    - No-Code
+    - iPaaS
+  created: "2026-04-19"
+  modified: "2026-04-19"
+
+binds:
+  - namespace: env
+    keys:
+      ALBATO_API_KEY: ALBATO_API_KEY
+
+capability:
+  consumes:
+    - type: http
+      namespace: albato-automations
+      baseUri: "https://albato.com/api/v1"
+      description: Albato Automations REST API
+      auth:
+        type: apiKey
+        header: Authorization
+        value: "{{env.ALBATO_API_KEY}}"
+      resources:
+        - name: automations
+          path: /automations
+          description: Automation workflows
+          operations:
+            - name: list-automations
+              method: GET
+              description: List all automation workflows
+              outputParameters:
+                - name: automations
+                  type: object
+                  value: "$."
+            - name: create-automation
+              method: POST
+              description: Create a new automation workflow
+              inputParameters:
+                - name: body
+                  type: object
+                  in: body
+              outputParameters:
+                - name: automation
+                  type: object
+                  value: "$."
+            - name: get-automation
+              method: GET
+              description: Get an automation by ID
+              inputParameters:
+                - name: id
+                  type: string
+                  in: path
+              outputParameters:
+                - name: automation
+                  type: object
+                  value: "$."
+            - name: enable-automation
+              method: POST
+              description: Enable an automation
+              inputParameters:
+                - name: id
+                  type: string
+                  in: path
+              outputParameters:
+                - name: automation
+                  type: object
+                  value: "$."
+            - name: disable-automation
+              method: POST
+              description: Disable an automation
+              inputParameters:
+                - name: id
+                  type: string
+                  in: path
+              outputParameters:
+                - name: automation
+                  type: object
+                  value: "$."
+            - name: list-executions
+              method: GET
+              description: List execution history for an automation
+              inputParameters:
+                - name: id
+                  type: string
+                  in: path
+              outputParameters:
+                - name: executions
+                  type: object
+                  value: "$."
+
+  exposes:
+    - type: rest
+      port: 8100
+      namespace: albato-automations-api
+      resources:
+        - path: /v1/automations
+          name: automations
+          operations:
+            - method: GET
+              name: list-automations
+              description: List automation workflows
+              call: "albato-automations.list-automations"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+    - type: mcp
+      port: 9100
+      namespace: albato-automations-mcp
+      transport: http
+      tools:
+        - name: list-albato-automations
+          description: List all Albato automation workflows and their status
+          hints:
+            readOnly: true
+            openWorld: false
+          call: "albato-automations.list-automations"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: get-albato-automation
+          description: Get details for a specific Albato automation workflow
+          hints:
+            readOnly: true
+            openWorld: false
+          call: "albato-automations.get-automation"
+          inputParameters:
+            - name: id
+              type: string
+              description: Automation ID
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: list-albato-executions
+          description: List execution history for an Albato automation
+          hints:
+            readOnly: true
+            openWorld: false
+          call: "albato-automations.list-executions"
+          inputParameters:
+            - name: id
+              type: string
+              description: Automation ID
+          outputParameters:
+            - type: object
+              mapping: "$."

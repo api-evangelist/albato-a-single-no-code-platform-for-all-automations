@@ -1,0 +1,235 @@
+vocabulary: "1.0.0"
+
+info:
+  provider: Albato
+  description: >-
+    Unified taxonomy for the Albato no-code automation platform covering
+    automation workflows, app connections, webhooks, and embedded iPaaS
+    capabilities.
+  created: "2026-04-19"
+  modified: "2026-04-19"
+
+operational:
+  apis:
+    - namespace: albato-automations
+      version: "v1"
+      baseUrl: "https://albato.com/api/v1"
+      status: active
+      description: Automation workflow management
+    - namespace: albato-connections
+      version: "v1"
+      baseUrl: "https://albato.com/api/v1"
+      status: active
+      description: App connection and webhook management
+
+  resources:
+    - name: automations
+      apis:
+        - albato-automations
+      actions:
+        - get
+        - list
+        - create
+        - update
+        - delete
+        - enable
+        - disable
+      description: Multi-step automation workflows
+    - name: executions
+      apis:
+        - albato-automations
+      actions:
+        - list
+      description: Automation execution history records
+    - name: connections
+      apis:
+        - albato-connections
+      actions:
+        - get
+        - list
+        - create
+        - delete
+      description: App authentication connections
+    - name: apps
+      apis:
+        - albato-connections
+      actions:
+        - list
+      description: Available app integrations
+    - name: webhooks
+      apis:
+        - albato-connections
+      actions:
+        - list
+        - create
+        - delete
+      description: Inbound webhook endpoints
+
+  actions:
+    - name: get
+      httpMethods:
+        - GET
+      pattern: read
+      description: Retrieve a single resource
+    - name: list
+      httpMethods:
+        - GET
+      pattern: read
+      description: List resources
+    - name: create
+      httpMethods:
+        - POST
+      pattern: write
+      description: Create a resource
+    - name: update
+      httpMethods:
+        - PUT
+      pattern: write
+      description: Update a resource
+    - name: delete
+      httpMethods:
+        - DELETE
+      pattern: destructive
+      description: Delete a resource
+    - name: enable
+      httpMethods:
+        - POST
+      pattern: write
+      description: Activate an automation
+    - name: disable
+      httpMethods:
+        - POST
+      pattern: write
+      description: Deactivate an automation
+
+  schemas:
+    automations:
+      - name: Automation
+        description: A multi-step automation workflow
+        keyProperties:
+          - id
+          - name
+          - status
+          - steps
+      - name: AutomationStep
+        description: A single step in an automation
+        keyProperties:
+          - app
+          - type
+          - event
+      - name: Execution
+        description: An automation execution record
+        keyProperties:
+          - id
+          - automation_id
+          - status
+          - started_at
+    connections:
+      - name: Connection
+        description: An app authentication connection
+        keyProperties:
+          - id
+          - app
+          - auth_type
+          - status
+      - name: App
+        description: An available app integration
+        keyProperties:
+          - id
+          - name
+          - category
+      - name: Webhook
+        description: An inbound webhook endpoint
+        keyProperties:
+          - id
+          - url
+
+  enums:
+    automationStatuses:
+      - active
+      - inactive
+    stepTypes:
+      - trigger
+      - action
+      - condition
+      - delay
+    authTypes:
+      - api_key
+      - oauth2
+      - basic
+      - session
+    executionStatuses:
+      - success
+      - error
+      - running
+
+  authentication:
+    schemes:
+      - name: ApiKeyAuth
+        description: API key in Authorization header
+        apis:
+          - albato-automations
+          - albato-connections
+
+capability:
+  workflows:
+    - name: Workflow Automation
+      file: capabilities/workflow-automation.yaml
+      description: Build and manage no-code automation workflows across 1,000+ apps
+      apisCombined:
+        - albato-automations
+        - albato-connections
+      toolCount: 5
+      personas:
+        - Automation Builder
+        - Operations Manager
+
+  personas:
+    - id: automation-builder
+      name: Automation Builder
+      description: >-
+        Creates and manages no-code automation workflows in Albato,
+        connecting apps and configuring triggers, actions, and conditions
+        to automate business processes.
+      workflows:
+        - Workflow Automation
+    - id: operations-manager
+      name: Operations Manager
+      description: >-
+        Monitors automation health, execution rates, and error rates.
+        Reviews workflow performance and ensures business processes run reliably.
+      workflows:
+        - Workflow Automation
+
+  domains:
+    - name: Workflow Management
+      description: Create and manage automation workflows
+      resources:
+        - automations
+        - executions
+    - name: App Integration
+      description: Connect apps and manage webhooks
+      resources:
+        - connections
+        - apps
+        - webhooks
+
+crossReference:
+  - resource: automations
+    operations:
+      - list-automations
+      - get-automation
+      - create-automation
+    workflows:
+      - Workflow Automation
+    personas:
+      - Automation Builder
+      - Operations Manager
+  - resource: connections
+    operations:
+      - list-connections
+      - create-connection
+    workflows:
+      - Workflow Automation
+    personas:
+      - Automation Builder

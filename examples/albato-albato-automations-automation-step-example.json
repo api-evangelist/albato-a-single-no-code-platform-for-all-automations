@@ -1,0 +1,6 @@
+{
+  "app": "hubspot",
+  "type": "trigger",
+  "event": "new_contact",
+  "config": {}
+}

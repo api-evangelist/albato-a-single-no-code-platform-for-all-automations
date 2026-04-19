@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/albato-a-single-no-code-platform-for-all-automations/refs/heads/main/json-schema/albato-albato-connections-app-schema.json",
+  "title": "App",
+  "description": "An available app integration in Albato",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "triggers_count": {
+      "type": "integer"
+    },
+    "actions_count": {
+      "type": "integer"
+    },
+    "icon_url": {
+      "type": "string",
+      "format": "uri"
+    }
+  }
+}

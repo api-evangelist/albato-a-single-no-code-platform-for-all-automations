@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/albato-a-single-no-code-platform-for-all-automations/refs/heads/main/json-schema/albato-albato-automations-execution-schema.json",
+  "title": "Execution",
+  "description": "An automation execution record",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "automation_id": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "started_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "finished_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "error_message": {
+      "type": "string"
+    },
+    "steps_completed": {
+      "type": "integer"
+    }
+  }
+}

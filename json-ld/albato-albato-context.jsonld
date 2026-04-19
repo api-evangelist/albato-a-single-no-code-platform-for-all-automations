@@ -1,0 +1,124 @@
+{
+  "@context": {
+    "albato": "https://albato.com/schema/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "Automation": {
+      "@id": "albato:Automation"
+    },
+    "id": {
+      "@id": "albato:id",
+      "@type": "xsd:string"
+    },
+    "name": {
+      "@id": "albato:name",
+      "@type": "xsd:string"
+    },
+    "description": {
+      "@id": "albato:description",
+      "@type": "xsd:string"
+    },
+    "status": {
+      "@id": "albato:status",
+      "@type": "xsd:string"
+    },
+    "trigger_count": {
+      "@id": "albato:trigger_count",
+      "@type": "xsd:integer"
+    },
+    "success_count": {
+      "@id": "albato:success_count",
+      "@type": "xsd:integer"
+    },
+    "error_count": {
+      "@id": "albato:error_count",
+      "@type": "xsd:integer"
+    },
+    "created_at": {
+      "@id": "albato:created_at",
+      "@type": "xsd:dateTime"
+    },
+    "updated_at": {
+      "@id": "albato:updated_at",
+      "@type": "xsd:dateTime"
+    },
+    "AutomationStep": {
+      "@id": "albato:AutomationStep"
+    },
+    "app": {
+      "@id": "albato:app",
+      "@type": "xsd:string"
+    },
+    "type": {
+      "@id": "albato:type",
+      "@type": "xsd:string"
+    },
+    "event": {
+      "@id": "albato:event",
+      "@type": "xsd:string"
+    },
+    "config": {
+      "@id": "albato:config",
+      "@type": "xsd:string"
+    },
+    "Execution": {
+      "@id": "albato:Execution"
+    },
+    "automation_id": {
+      "@id": "albato:automation_id",
+      "@type": "xsd:string"
+    },
+    "started_at": {
+      "@id": "albato:started_at",
+      "@type": "xsd:dateTime"
+    },
+    "finished_at": {
+      "@id": "albato:finished_at",
+      "@type": "xsd:dateTime"
+    },
+    "error_message": {
+      "@id": "albato:error_message",
+      "@type": "xsd:string"
+    },
+    "steps_completed": {
+      "@id": "albato:steps_completed",
+      "@type": "xsd:integer"
+    },
+    "Connection": {
+      "@id": "albato:Connection"
+    },
+    "auth_type": {
+      "@id": "albato:auth_type",
+      "@type": "xsd:string"
+    },
+    "last_used_at": {
+      "@id": "albato:last_used_at",
+      "@type": "xsd:dateTime"
+    },
+    "App": {
+      "@id": "albato:App"
+    },
+    "category": {
+      "@id": "albato:category",
+      "@type": "xsd:string"
+    },
+    "triggers_count": {
+      "@id": "albato:triggers_count",
+      "@type": "xsd:integer"
+    },
+    "actions_count": {
+      "@id": "albato:actions_count",
+      "@type": "xsd:integer"
+    },
+    "icon_url": {
+      "@id": "albato:icon_url",
+      "@type": "xsd:anyURI"
+    },
+    "Webhook": {
+      "@id": "albato:Webhook"
+    },
+    "url": {
+      "@id": "albato:url",
+      "@type": "xsd:anyURI"
+    }
+  }
+}

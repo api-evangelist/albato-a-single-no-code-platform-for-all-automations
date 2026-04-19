@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-structure.org/meta/extended/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/albato-a-single-no-code-platform-for-all-automations/refs/heads/main/json-structure/albato-albato-connections-app-structure.json",
+  "title": "App",
+  "description": "An available app integration in Albato",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": ""
+    },
+    "name": {
+      "type": "string",
+      "description": ""
+    },
+    "category": {
+      "type": "string",
+      "description": ""
+    },
+    "description": {
+      "type": "string",
+      "description": ""
+    },
+    "triggers_count": {
+      "type": "int32",
+      "description": ""
+    },
+    "actions_count": {
+      "type": "int32",
+      "description": ""
+    },
+    "icon_url": {
+      "type": "uri",
+      "description": ""
+    }
+  }
+}
