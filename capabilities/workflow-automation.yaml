@@ -1,143 +1,261 @@
-naftiko: "1.0.0-alpha1"
-
+naftiko: 1.0.0-alpha2
 info:
   label: Albato Workflow Automation
-  description: >-
-    Workflow capability for building and managing no-code automation workflows
-    in Albato. Combines automation management and app connection APIs to enable
-    operations teams to create, monitor, and control multi-step automations
-    across 1,000+ integrated apps.
+  description: Workflow capability for building and managing no-code automation workflows in Albato. Combines automation management
+    and app connection APIs to enable operations teams to create, monitor, and control multi-step automations across 1,000+
+    integrated apps.
   tags:
-    - Albato
-    - Workflow Automation
-    - No-Code
-    - iPaaS
-    - App Integration
-    - Embedded Integration
-  created: "2026-04-19"
-  modified: "2026-04-19"
-
+  - Albato
+  - Workflow Automation
+  - No-Code
+  - iPaaS
+  - App Integration
+  - Embedded Integration
+  created: '2026-04-19'
+  modified: '2026-05-06'
 binds:
-  - namespace: env
-    keys:
-      ALBATO_API_KEY: ALBATO_API_KEY
-
+- namespace: env
+  keys:
+    ALBATO_API_KEY: ALBATO_API_KEY
 capability:
   consumes:
-    - import: albato-automations
-      location: ./shared/automations-api.yaml
-    - import: albato-connections
-      location: ./shared/connections-api.yaml
-
+  - type: http
+    namespace: albato-automations
+    baseUri: https://albato.com/api/v1
+    description: Albato Automations REST API
+    auth:
+      type: apiKey
+      header: Authorization
+      value: '{{env.ALBATO_API_KEY}}'
+    resources:
+    - name: automations
+      path: /automations
+      description: Automation workflows
+      operations:
+      - name: list-automations
+        method: GET
+        description: List all automation workflows
+        outputParameters:
+        - name: automations
+          type: object
+          value: $.
+      - name: create-automation
+        method: POST
+        description: Create a new automation workflow
+        inputParameters:
+        - name: body
+          type: object
+          in: body
+        outputParameters:
+        - name: automation
+          type: object
+          value: $.
+      - name: get-automation
+        method: GET
+        description: Get an automation by ID
+        inputParameters:
+        - name: id
+          type: string
+          in: path
+        outputParameters:
+        - name: automation
+          type: object
+          value: $.
+      - name: enable-automation
+        method: POST
+        description: Enable an automation
+        inputParameters:
+        - name: id
+          type: string
+          in: path
+        outputParameters:
+        - name: automation
+          type: object
+          value: $.
+      - name: disable-automation
+        method: POST
+        description: Disable an automation
+        inputParameters:
+        - name: id
+          type: string
+          in: path
+        outputParameters:
+        - name: automation
+          type: object
+          value: $.
+      - name: list-executions
+        method: GET
+        description: List execution history for an automation
+        inputParameters:
+        - name: id
+          type: string
+          in: path
+        outputParameters:
+        - name: executions
+          type: object
+          value: $.
+  - type: http
+    namespace: albato-connections
+    baseUri: https://albato.com/api/v1
+    description: Albato Connections REST API
+    auth:
+      type: apiKey
+      header: Authorization
+      value: '{{env.ALBATO_API_KEY}}'
+    resources:
+    - name: connections
+      path: /connections
+      description: App connections
+      operations:
+      - name: list-connections
+        method: GET
+        description: List all app connections
+        outputParameters:
+        - name: connections
+          type: object
+          value: $.
+      - name: get-connection
+        method: GET
+        description: Get a connection by ID
+        inputParameters:
+        - name: id
+          type: string
+          in: path
+        outputParameters:
+        - name: connection
+          type: object
+          value: $.
+    - name: apps
+      path: /apps
+      description: Available app integrations
+      operations:
+      - name: list-apps
+        method: GET
+        description: List all available app integrations
+        inputParameters:
+        - name: search
+          type: string
+          in: query
+        - name: category
+          type: string
+          in: query
+        outputParameters:
+        - name: apps
+          type: object
+          value: $.
+    - name: webhooks
+      path: /webhooks
+      description: Inbound webhook endpoints
+      operations:
+      - name: list-webhooks
+        method: GET
+        description: List all inbound webhooks
+        outputParameters:
+        - name: webhooks
+          type: array
+          value: $.
   exposes:
-    - type: rest
-      port: 8080
-      namespace: albato-workflow-api
-      description: Unified REST API for Albato workflow automation management.
-      resources:
-        - path: /v1/automations
-          name: automations
-          description: Automation workflows
-          operations:
-            - method: GET
-              name: list-automations
-              description: List all automation workflows
-              call: "albato-automations.list-automations"
-              outputParameters:
-                - type: object
-                  mapping: "$."
-        - path: /v1/connections
-          name: connections
-          description: App connections
-          operations:
-            - method: GET
-              name: list-connections
-              description: List all app connections
-              call: "albato-connections.list-connections"
-              outputParameters:
-                - type: object
-                  mapping: "$."
-        - path: /v1/apps
-          name: apps
-          description: Available app integrations
-          operations:
-            - method: GET
-              name: list-apps
-              description: Browse available apps
-              call: "albato-connections.list-apps"
-              outputParameters:
-                - type: object
-                  mapping: "$."
-
-    - type: mcp
-      port: 9090
-      namespace: albato-workflow-mcp
-      transport: http
-      description: MCP server for AI-assisted Albato workflow automation.
-      tools:
-        - name: list-albato-automations
-          description: >-
-            List all Albato automation workflows including their status, trigger
-            counts, and success/error rates.
-          hints:
-            readOnly: true
-            openWorld: false
-          call: "albato-automations.list-automations"
-          outputParameters:
-            - type: object
-              mapping: "$."
-        - name: get-albato-automation
-          description: Get details for a specific Albato automation workflow by ID.
-          hints:
-            readOnly: true
-            openWorld: false
-          call: "albato-automations.get-automation"
-          inputParameters:
-            - name: id
-              type: string
-              description: Automation ID
-          outputParameters:
-            - type: object
-              mapping: "$."
-        - name: list-albato-executions
-          description: >-
-            List execution history for an Albato automation, showing successes,
-            errors, and step completion counts.
-          hints:
-            readOnly: true
-            openWorld: false
-          call: "albato-automations.list-executions"
-          inputParameters:
-            - name: id
-              type: string
-              description: Automation ID
-          outputParameters:
-            - type: object
-              mapping: "$."
-        - name: list-albato-connections
-          description: List all app connections configured in the Albato account.
-          hints:
-            readOnly: true
-            openWorld: false
-          call: "albato-connections.list-connections"
-          outputParameters:
-            - type: object
-              mapping: "$."
-        - name: list-albato-apps
-          description: >-
-            Browse 1,000+ available app integrations in Albato.
-            Search by name or filter by category.
-          hints:
-            readOnly: true
-            openWorld: false
-          call: "albato-connections.list-apps"
-          inputParameters:
-            - name: search
-              type: string
-              description: Search term to filter apps
-            - name: category
-              type: string
-              description: Category to filter apps
-          outputParameters:
-            - type: object
-              mapping: "$."
+  - type: rest
+    port: 8080
+    namespace: albato-workflow-api
+    description: Unified REST API for Albato workflow automation management.
+    resources:
+    - path: /v1/automations
+      name: automations
+      description: Automation workflows
+      operations:
+      - method: GET
+        name: list-automations
+        description: List all automation workflows
+        call: albato-automations.list-automations
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/connections
+      name: connections
+      description: App connections
+      operations:
+      - method: GET
+        name: list-connections
+        description: List all app connections
+        call: albato-connections.list-connections
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/apps
+      name: apps
+      description: Available app integrations
+      operations:
+      - method: GET
+        name: list-apps
+        description: Browse available apps
+        call: albato-connections.list-apps
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    port: 9090
+    namespace: albato-workflow-mcp
+    transport: http
+    description: MCP server for AI-assisted Albato workflow automation.
+    tools:
+    - name: list-albato-automations
+      description: List all Albato automation workflows including their status, trigger counts, and success/error rates.
+      hints:
+        readOnly: true
+        openWorld: false
+      call: albato-automations.list-automations
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-albato-automation
+      description: Get details for a specific Albato automation workflow by ID.
+      hints:
+        readOnly: true
+        openWorld: false
+      call: albato-automations.get-automation
+      inputParameters:
+      - name: id
+        type: string
+        description: Automation ID
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-albato-executions
+      description: List execution history for an Albato automation, showing successes, errors, and step completion counts.
+      hints:
+        readOnly: true
+        openWorld: false
+      call: albato-automations.list-executions
+      inputParameters:
+      - name: id
+        type: string
+        description: Automation ID
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-albato-connections
+      description: List all app connections configured in the Albato account.
+      hints:
+        readOnly: true
+        openWorld: false
+      call: albato-connections.list-connections
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-albato-apps
+      description: Browse 1,000+ available app integrations in Albato. Search by name or filter by category.
+      hints:
+        readOnly: true
+        openWorld: false
+      call: albato-connections.list-apps
+      inputParameters:
+      - name: search
+        type: string
+        description: Search term to filter apps
+      - name: category
+        type: string
+        description: Category to filter apps
+      outputParameters:
+      - type: object
+        mapping: $.
