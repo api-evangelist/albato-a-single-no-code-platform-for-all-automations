@@ -193,6 +193,34 @@ common:
         description: Team messaging integration for notifications and workflow alerts.
       - name: Shopify
         description: E-commerce integration for order, product, and customer automation.
+integrations:
+  - name: Integrate undefined with ActiveCampaign
+  - name: Integrate undefined with AliExpress
+  - name: Integrate undefined with Chat2Desk
+  - name: Integrate undefined with Conta Azul
+  - name: Integrate undefined with Facebook
+  - name: Integrate undefined with Facebook Conversions API
+  - name: Integrate undefined with Gmail
+  - name: Integrate undefined with Google Ads
+  - name: Integrate undefined with Google BigQuery
+  - name: Integrate undefined with Google Sheets
+  - name: Integrate undefined with HTTP Request/Outgoing webhook
+  - name: Integrate undefined with Hotmart
+  - name: Integrate undefined with HubSpot
+  - name: Integrate undefined with MailChimp
+  - name: Integrate undefined with Ortto
+  - name: Integrate undefined with RD Station
+  - name: Integrate undefined with Telegram
+  - name: Integrate undefined with TikTok Business
+  - name: 0-9
+  - name: Medium
+  - name: OpenAI
+  - name: Bubble
+  - name: Nifty
+  - name: Facebook Group
+  - name: Discord
+  - name: WIX
+  - name: See all integrations
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
