@@ -1,0 +1,27 @@
+generated: '2026-06-20'
+method: searched
+source: probed https://albato.com and https://api.albato.com .well-known surface
+hosts:
+  - host: https://albato.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+  - host: https://api.albato.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+notes: >-
+  No /.well-known/ discovery documents are published on either the marketing
+  host (albato.com) or the API host (api.albato.com). No security.txt found.

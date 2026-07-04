@@ -18,7 +18,7 @@ description: >-
   delays, plus embedded iPaaS capabilities for SaaS companies to offer
   native integrations to their customers.
 created: '2026-03-16'
-modified: '2026-04-19'
+modified: '2026-06-20'
 specificationVersion: '0.19'
 apis:
   - aid: albato-a-single-no-code-platform-for-all-automations:automations-api
@@ -51,6 +51,8 @@ apis:
         type: Example
       - url: examples/albato-albato-automations-execution-example.json
         type: Example
+      - url: overlays/albato-a-single-no-code-platform-for-all-automations-automations-overlay.yaml
+        type: Overlay
     humanURL: https://albato.com
     baseURL: https://albato.com/api/v1
     description: >-
@@ -88,6 +90,8 @@ apis:
         type: Example
       - url: examples/albato-albato-connections-webhook-example.json
         type: Example
+      - url: overlays/albato-a-single-no-code-platform-for-all-automations-connections-overlay.yaml
+        type: Overlay
     humanURL: https://albato.com
     baseURL: https://albato.com/api/v1
     description: >-
@@ -98,6 +102,8 @@ apis:
 common:
   - url: https://albato.com
     type: Website
+  - url: https://albato.com/blog
+    type: Blog
   - url: https://wiki.albato.com/en
     type: Documentation
   - url: https://albato.com/pricing
@@ -114,6 +120,20 @@ common:
     type: Vocabulary
   - url: json-ld/albato-albato-context.jsonld
     type: JSONLD
+  - url: packages/albato-a-single-no-code-platform-for-all-automations-packages.yml
+    type: Packages
+  - url: well-known/albato-a-single-no-code-platform-for-all-automations-well-known.yml
+    type: WellKnown
+  - url: llms/albato-a-single-no-code-platform-for-all-automations-llms.txt
+    type: LLMsTxt
+  - url: mcp/albato-a-single-no-code-platform-for-all-automations-mcp.yml
+    type: MCPServer
+  - url: conformance/albato-a-single-no-code-platform-for-all-automations-conformance.yml
+    type: Conformance
+  - url: errors/albato-a-single-no-code-platform-for-all-automations-problem-types.yml
+    type: ErrorCatalog
+  - url: lifecycle/albato-a-single-no-code-platform-for-all-automations-lifecycle.yml
+    type: Lifecycle
   - url: capabilities/shared/automations-api.yaml
     type: NaftikoCapability
     title: Albato Automations Shared Capability

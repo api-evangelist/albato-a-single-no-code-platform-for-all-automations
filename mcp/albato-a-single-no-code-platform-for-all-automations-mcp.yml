@@ -1,0 +1,68 @@
+generated: '2026-06-20'
+method: derived
+status: candidate
+source: >-
+  Derived from openapi/albato-automations-openapi.yaml and
+  openapi/albato-connections-openapi.yaml. Note: Albato markets an "Embedded MCP
+  server" for SaaS customers (https://albato.com/embedded/mcp), a single
+  white-label MCP endpoint backed by 1,000+ connectors that is provisioned
+  per-tenant rather than published as one public hosted URL; the tool list below
+  is a candidate mapping of the REST operations, not that hosted server.
+server:
+  name: albato
+  transport: http
+related_offering:
+  name: Albato Embedded MCP
+  url: https://albato.com/embedded/mcp
+  description: >-
+    Per-tenant white-label MCP endpoint for SaaS products, backed by Albato's
+    1,000+ pre-built connectors. Not a single public hosted server URL.
+tools:
+  - name: list_automations
+    description: List automation workflows
+    source_operation: openapi/albato-automations-openapi.yaml#listAutomations
+  - name: create_automation
+    description: Create a new automation workflow
+    source_operation: openapi/albato-automations-openapi.yaml#createAutomation
+  - name: get_automation
+    description: Get a specific automation workflow
+    source_operation: openapi/albato-automations-openapi.yaml#getAutomation
+  - name: update_automation
+    description: Update an existing automation workflow
+    source_operation: openapi/albato-automations-openapi.yaml#updateAutomation
+  - name: delete_automation
+    description: Delete an automation workflow
+    source_operation: openapi/albato-automations-openapi.yaml#deleteAutomation
+  - name: enable_automation
+    description: Enable an automation workflow
+    source_operation: openapi/albato-automations-openapi.yaml#enableAutomation
+  - name: disable_automation
+    description: Disable an automation workflow
+    source_operation: openapi/albato-automations-openapi.yaml#disableAutomation
+  - name: list_executions
+    description: List automation execution history
+    source_operation: openapi/albato-automations-openapi.yaml#listExecutions
+  - name: list_connections
+    description: List app connections
+    source_operation: openapi/albato-connections-openapi.yaml#listConnections
+  - name: create_connection
+    description: Create a new app connection
+    source_operation: openapi/albato-connections-openapi.yaml#createConnection
+  - name: get_connection
+    description: Get a specific app connection
+    source_operation: openapi/albato-connections-openapi.yaml#getConnection
+  - name: delete_connection
+    description: Delete an app connection
+    source_operation: openapi/albato-connections-openapi.yaml#deleteConnection
+  - name: list_apps
+    description: List available apps/connectors
+    source_operation: openapi/albato-connections-openapi.yaml#listApps
+  - name: list_webhooks
+    description: List inbound webhook endpoints
+    source_operation: openapi/albato-connections-openapi.yaml#listWebhooks
+  - name: create_webhook
+    description: Create an inbound webhook endpoint
+    source_operation: openapi/albato-connections-openapi.yaml#createWebhook
+  - name: delete_webhook
+    description: Delete an inbound webhook endpoint
+    source_operation: openapi/albato-connections-openapi.yaml#deleteWebhook

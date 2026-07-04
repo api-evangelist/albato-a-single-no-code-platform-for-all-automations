@@ -1,0 +1,23 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Albato Connections API
+  version: 1.0.0
+extends: openapi/albato-connections-openapi.yaml
+# generated: '2026-06-20'
+# method: generated
+# source: apis.yml + Albato docs (https://albato.com/wiki/articles/api-general-information)
+actions:
+  - target: $.info
+    update:
+      x-apievangelist-provider: albato-a-single-no-code-platform-for-all-automations
+      x-apievangelist-api: connections-api
+      x-apievangelist-docs: https://albato.com/wiki/articles/api-general-information
+      x-apievangelist-note: >-
+        Albato documents the production API host as https://api.albato.com and
+        Basic authorization (permanent token as username, empty password). The
+        base servers[] URL and ApiKeyAuth scheme in the harvested OpenAPI were
+        inferred and may not match the live surface.
+  - target: $.servers
+    update:
+      - url: https://api.albato.com
+        description: Albato production API host (per docs)

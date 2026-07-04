@@ -1,0 +1,23 @@
+generated: '2026-06-20'
+method: searched
+source: >-
+  https://albato.com/wiki/articles/api-general-information ,
+  https://status.albato.com/ , https://roadmap.albato.com/
+versioning:
+  scheme: unspecified
+  current: null
+  docs: https://albato.com/wiki/articles/api-general-information
+  notes: >-
+    No formal API version scheme is documented; the harvested OpenAPI carries
+    info.version 1.0.0 and an inferred /api/v1 path, but Albato's own docs
+    describe the host as https://api.albato.com without a version segment.
+deprecation:
+  policy_url: null
+  sunset_header: false
+  notes: No deprecation policy or RFC 8594 Sunset/Deprecation header documented.
+sla:
+  url: null
+  uptime_target: null
+status_page: https://status.albato.com/
+roadmap: https://roadmap.albato.com/
+deprecated_operations: []

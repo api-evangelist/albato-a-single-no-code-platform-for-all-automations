@@ -1,0 +1,26 @@
+generated: '2026-06-20'
+method: derived
+format: plain-json
+source: >-
+  Derived from 4xx responses in openapi/albato-automations-openapi.yaml and
+  openapi/albato-connections-openapi.yaml. Docs
+  (https://albato.com/wiki/articles/api-general-information) state error
+  responses return a boolean status indicator plus a detailed error
+  description; no RFC 9457 application/problem+json is used.
+problems:
+  - status: 400
+    title: Invalid request
+    description: Request body or parameters failed validation.
+    source_operation: openapi/albato-automations-openapi.yaml#createAutomation
+  - status: 400
+    title: Invalid credentials
+    description: Connection credentials (API key / OAuth) were rejected.
+    source_operation: openapi/albato-connections-openapi.yaml#createConnection
+  - status: 401
+    title: Unauthorized
+    description: Missing or invalid Albato API token.
+    source_operation: openapi/albato-automations-openapi.yaml#listAutomations
+  - status: 404
+    title: Automation not found
+    description: No automation exists for the supplied id.
+    source_operation: openapi/albato-automations-openapi.yaml#getAutomation

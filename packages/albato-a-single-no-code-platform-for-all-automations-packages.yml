@@ -1,0 +1,8 @@
+generated: '2026-06-20'
+method: none
+source: >-
+  Searched npm, PyPI, Packagist, and the Albato docs/SDK pages. No first-party
+  Albato client SDK/CLI package was found on any public registry; the docs
+  describe direct REST calls (Basic auth over https://api.albato.com) with no
+  published client library.
+packages: []

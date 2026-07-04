@@ -1,0 +1,69 @@
+# Albato
+
+> Albato is a no-code integration platform (iPaaS) that enables users to set up integrations between 800+ apps in a self-service mode. It also offers a B2B product — embedded, fully white-label integrations for SaaS companies.
+
+## Docs
+– [Quick Start Guide](https://wiki.albato.com/en/articles/9018303-quick-start-guide): Everything you need to know to get started with Albato  
+– [How to create your first Automation](https://wiki.albato.com/en/articles/9024293-how-to-create-your-first-automation): Step-by-step guide for your first workflow  
+– [Connect Your App Accounts to Albato](https://wiki.albato.com/en/articles/9024252-connect-your-app-accounts-to-albato): Instructions for linking your accounts  
+– [Trigger Setup](https://wiki.albato.com/en/articles/9064832-trigger-setup): Guide to configuring the first step of your automation  
+– [Action Setup](https://wiki.albato.com/en/articles/9064890-action-setup): Guide to configuring the final step of your automation  
+– [What is Data Migration?](https://wiki.albato.com/en/articles/9024243-what-is-data-migration): Overview of moving historical data through Albato  
+– [How to create a Solution](https://wiki.albato.com/en/articles/9024323-how-to-create-a-solution): Package your automations for reuse or embedding  
+– [API Reference](https://wiki.albato.com/en/collections/9383875-embedded-documentation): Complete API documentation with authentication and methods  
+– [App Integrator Documentation](https://wiki.albato.com/en/articles/9082891-app-integrator-documentation): Guide to creating custom apps using Albato's no-code tool
+
+## Tutorials
+– [How to connect ClickUp to Albato](https://albato.com/blog/instructions/how-to-connect-clickup-to-albato): Step-by-step guide for ClickUp integrations  
+– [Connect Zendesk with Popular Apps](https://albato.com/blog/instructions/connect-zendesk-with-popular-apps): Streamline your support workflow with Albato  
+– [Connect Etsy with your favorite apps](https://albato.com/blog/instructions/connect-etsy-with-your-favorite-apps): Automate your e-commerce processes via Albato
+
+## Embedded iPaaS
+– [Embedded Albato](https://albato.com/embedded): Fully white-label embedded integrations for SaaS  
+– [Pricing Albato Embedded for SaaS](https://albato.com/embedded/pricing): Pricing options for SaaS platforms using embedded Albato  
+– [Use Cases Albato Embedded](https://albato.com/embedded/success-stories): Real-world examples of embedded Albato in action  
+– [What is Albato Embedded](https://wiki.albato.com/en/articles/9024279-what-is-albato-embedded): Overview of Albato's embedded integration capabilities  
+– [What Is an iPaaS?](https://albato.com/blog/publications/what-is-ipaas): Integration Platform as a Service Overview  
+– [White-Label Integrations for SaaS: From A to Z](https://albato.com/blog/publications/embedded-white-label-saas): A complete guide to embedded integrations  
+– [In-house vs. Unified API vs. Embedded iPaaS](https://albato.com/blog/publications/embedded-in-house-unified-api-embedded-ipaas): What model to choose for your SaaS  
+– [Albato Embedded vs. Zapier](https://albato.com/blog/publications/embedded-white-label-zapier-vs-albato-embedded): White-label feature comparison  
+– [Albato: Top iPaaS Alternative for Workato](https://albato.com/blog/publications/best-ipaas-alternative-workato-albato): Why SaaS teams choose Albato over Workato
+
+## Blog
+– [Top Tools for Outreach](https://albato.com/blog/publications/top-tools-for-outreach): A curated list of tools to boost your outbound marketing efforts  
+– [No-Code Automation for Business](https://albato.com/blog/publications/embedded-no-code-automation-business): How embedded no-code solutions drive efficiency  
+– [DeepSeek Overview](https://albato.com/blog/publications/deepseek-owerview): Exploring DeepSeek’s capabilities in automation and AI  
+– [How to Use Claude Artifacts](https://albato.com/blog/publications/how-to-use-claude-artifacts-guide): A guide to using Claude's new document features  
+– [Best AI Tools 2025](https://albato.com/blog/publications/the-best-ai-tools-2025): Top AI platforms and applications to explore this year  
+– [Best Alternative to Zapier](https://albato.com/blog/publications/best-alternative-to-zapier): Comparing Zapier to modern no-code platforms  
+– [Gemini vs. ChatGPT](https://albato.com/blog/publications/gemini-vs-chatgpt-comparing-the-top-ai-chatbots-of-2024): A deep comparison of the two top AI chatbots  
+– [Best iPaaS Solutions in 2024](https://albato.com/blog/publications/best-ipaas-solutions-in-2024-comprehensive-guide-to-integration-platforms): A detailed review of integration platforms and how they compare  
+– [Albato Embedded: Revolutionizing No-Code iPaaS](https://albato.com/blog/publications/albato-embedded-ipaas-revolution): Insights into Albato's embedded solutions  
+– [In-house vs. Unified API vs. Embedded iPaaS](https://albato.com/blog/publications/embedded-in-house-unified-api-embedded-ipaas): Comparison of integration strategies  
+– [Zapier vs. Albato Embedded](https://albato.com/blog/publications/embedded-albato-vs-zapier): White-label feature comparison
+
+## Popular Apps for Integration
+– [Google Sheets](https://albato.com/apps/googlesheets): Automate data flows in and out of Google Sheets  
+– [HubSpot](https://albato.com/apps/hubspot): Integrate marketing, CRM, and sales operations  
+– [Gmail](https://albato.com/apps/gmail): Automate sending, receiving, and organizing emails  
+– [ActiveCampaign](https://albato.com/apps/activecampaign): Streamline email marketing and CRM workflows  
+– [AliExpress](https://albato.com/apps/aliexpresstmall): Sync order and product data from marketplaces  
+– [Facebook](https://albato.com/apps/facebook): Automate advertising, leads, and page management  
+– [Telegram](https://albato.com/apps/telegramprivate): Send alerts or collect form data via private Telegram bots  
+– [TikTok](https://albato.com/apps/tiktok): Integrate TikTok ads and lead gen with your CRM  
+– [Typeform](https://albato.com/apps/typeform): Automate survey responses and form inputs  
+– [Trello](https://albato.com/apps/trello): Sync project management workflows with other tools
+
+## Popular Integrations Between Apps
+– [Facebook + Telegram](https://albato.com/connect/facebook-with-telegramprivate): Send Facebook leads directly to Telegram  
+– [Facebook + Google Sheets](https://albato.com/connect/facebook-with-googlesheets): Export ad leads to spreadsheets in real time  
+– [OpenAI + Telegram](https://albato.com/connect/openai-with-telegramprivate): Automate chatbot or assistant workflows  
+– [Online Reviews + Stripe](https://albato.com/connect/online_reviews-with-stripe): Link reviews and payments for smarter tracking  
+– [Google Forms + Online Reviews](https://albato.com/connect/google_forms-with-online_reviews): Collect and publish reviews from form responses  
+– [CopilotAI + HubSpot](https://albato.com/connect/copilotai-with-hubspot): Sync leads and engagement insights automatically  
+– [Chatfuel + Google Sheets](https://albato.com/connect/chatfuel-with-googlesheets): Store bot responses and user data in a spreadsheet
+
+## Optional
+– [Help Center](https://wiki.albato.com/en/): FAQs and support resources  
+– [Albato Academy](https://academy.albato.com/): Courses to learn how the platform works and improve performance  
+– [Affiliate Program](https://albato.com/affiliate): Earn commissions by referring new users to Albato

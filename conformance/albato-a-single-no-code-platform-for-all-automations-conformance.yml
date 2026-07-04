@@ -1,0 +1,53 @@
+generated: '2026-06-20'
+method: derived
+source: >-
+  openapi/*.yaml securitySchemes + Albato docs
+  (https://albato.com/wiki/articles/api-general-information). Downstream
+  connector auth methods (OAuth2, API token, session, custom) are what Albato
+  connects to on behalf of users, not how the Albato API itself authenticates.
+standards:
+  - id: http-basic-auth
+    conforms: true
+    evidence: >-
+      Docs specify Basic authorization to https://api.albato.com with the
+      master account permanent token as username and empty password.
+  - id: apikey-auth
+    conforms: true
+    evidence: >-
+      Harvested OpenAPI securitySchemes declares apiKey in Authorization header
+      for both APIs.
+  - id: oauth2
+    conforms: false
+    evidence: >-
+      Albato consumes OAuth2 to connect downstream apps, but the Albato API
+      itself is documented as Basic-auth; no OAuth2 securityScheme on the API.
+  - id: oidc
+    conforms: false
+  - id: webhooks
+    conforms: true
+    evidence: >-
+      Connections API exposes inbound webhook endpoints (createWebhook,
+      listWebhooks, deleteWebhook).
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: >-
+      Error responses are plain JSON (boolean status + description string per
+      docs); no application/problem+json media type in OpenAPI.
+  - id: pagination
+    conforms: true
+    evidence: listAutomations supports limit and offset query parameters.
+  - id: idempotency
+    conforms: false
+    evidence: No Idempotency-Key header documented in OpenAPI or docs.
+  - id: fhir-r4
+    conforms: false
+  - id: fapi
+    conforms: false
+  - id: scim
+    conforms: false
+  - id: odata
+    conforms: false
+  - id: psd2
+    conforms: false
+  - id: json-api
+    conforms: false
