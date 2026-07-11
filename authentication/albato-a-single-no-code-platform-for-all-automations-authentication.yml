@@ -1,0 +1,17 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/albato-automations-openapi.yaml, openapi/albato-connections-openapi.yaml
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - header
+schemes:
+- name: ApiKeyAuth
+  type: apiKey
+  in: header
+  parameter: Authorization
+  description: API key for Albato account access
+  sources:
+  - openapi/albato-automations-openapi.yaml
+  - openapi/albato-connections-openapi.yaml

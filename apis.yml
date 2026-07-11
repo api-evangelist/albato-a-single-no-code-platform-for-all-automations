@@ -100,6 +100,12 @@ apis:
       creating inbound webhook endpoints.
 
 common:
+  - type: TrustCenter
+    url: security/albato-a-single-no-code-platform-for-all-automations-trust-center.yml
+  - type: DomainSecurity
+    url: security/albato-a-single-no-code-platform-for-all-automations-domain-security.yml
+  - type: Authentication
+    url: authentication/albato-a-single-no-code-platform-for-all-automations-authentication.yml
   - url: https://albato.com
     type: Website
   - url: https://albato.com/blog
