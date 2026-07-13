@@ -1,8 +1,14 @@
 {
   "repo": "albato-a-single-no-code-platform-for-all-automations",
   "feeds": [
-    { "source": "https://albato.com/blog", "feed_url": "https://albato.com/blog", "title": "Albato Blog", "saved": 3 }
+    {
+      "source": "https://albato.com/blog",
+      "feed_url": "https://albato.com/blog",
+      "title": "",
+      "saved": 0,
+      "method": "none"
+    }
   ],
-  "fetched": "2026-07-04T13:37:27Z",
+  "fetched": "2026-07-11T11:50:51Z",
   "post_count": 3
 }
