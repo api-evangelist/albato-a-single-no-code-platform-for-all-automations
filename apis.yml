@@ -100,6 +100,8 @@ apis:
       creating inbound webhook endpoints.
 
 common:
+  - type: AgenticAccess
+    url: agentic-access/albato-a-single-no-code-platform-for-all-automations-agentic-access.yml
   - type: TrustCenter
     url: security/albato-a-single-no-code-platform-for-all-automations-trust-center.yml
   - type: DomainSecurity
