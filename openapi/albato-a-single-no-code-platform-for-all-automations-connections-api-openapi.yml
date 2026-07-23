@@ -1,0 +1,164 @@
+openapi: 3.0.3
+info:
+  title: Albato Automations Apps Connections API
+  description: REST API for managing automation workflows in the Albato no-code integration platform. Supports creating, reading, updating, enabling, and disabling multi-step automation workflows that connect 1,000+ apps.
+  version: 1.0.0
+  contact:
+    name: Albato Support
+    url: https://albato.com
+servers:
+- url: https://albato.com/api/v1
+  description: Albato API
+security:
+- ApiKeyAuth: []
+tags:
+- name: Connections
+  description: Manage app connections
+paths:
+  /connections:
+    get:
+      operationId: listConnections
+      summary: List connections
+      description: Returns all app connections for the current account.
+      tags:
+      - Connections
+      parameters:
+      - name: app
+        in: query
+        description: Filter by app identifier
+        schema:
+          type: string
+      - name: limit
+        in: query
+        schema:
+          type: integer
+          default: 20
+      - name: offset
+        in: query
+        schema:
+          type: integer
+          default: 0
+      responses:
+        '200':
+          description: List of connections
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConnectionList'
+        '401':
+          description: Unauthorized
+    post:
+      operationId: createConnection
+      summary: Create a connection
+      description: Creates a new app connection using API key or OAuth credentials.
+      tags:
+      - Connections
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ConnectionRequest'
+      responses:
+        '201':
+          description: Connection created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Connection'
+        '400':
+          description: Invalid credentials
+  /connections/{id}:
+    get:
+      operationId: getConnection
+      summary: Get a connection
+      description: Returns details for a specific app connection.
+      tags:
+      - Connections
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Connection details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Connection'
+    delete:
+      operationId: deleteConnection
+      summary: Delete a connection
+      description: Deletes an app connection and disconnects associated automations.
+      tags:
+      - Connections
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '204':
+          description: Connection deleted
+components:
+  schemas:
+    Connection:
+      allOf:
+      - $ref: '#/components/schemas/ConnectionRequest'
+      - type: object
+        properties:
+          id:
+            type: string
+          status:
+            type: string
+            enum:
+            - active
+            - expired
+            - error
+          created_at:
+            type: string
+            format: date-time
+          last_used_at:
+            type: string
+            format: date-time
+    ConnectionRequest:
+      type: object
+      required:
+      - app
+      - name
+      properties:
+        app:
+          type: string
+          description: App identifier to connect
+        name:
+          type: string
+          description: Display name for this connection
+        auth_type:
+          type: string
+          enum:
+          - api_key
+          - oauth2
+          - basic
+          - session
+        credentials:
+          type: object
+          additionalProperties: true
+          description: Auth credentials specific to the app
+    ConnectionList:
+      type: object
+      properties:
+        total:
+          type: integer
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Connection'
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: API key for Albato account access

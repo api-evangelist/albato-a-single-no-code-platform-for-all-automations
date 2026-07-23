@@ -1,0 +1,102 @@
+openapi: 3.0.3
+info:
+  title: Albato Automations Apps Webhooks API
+  description: REST API for managing automation workflows in the Albato no-code integration platform. Supports creating, reading, updating, enabling, and disabling multi-step automation workflows that connect 1,000+ apps.
+  version: 1.0.0
+  contact:
+    name: Albato Support
+    url: https://albato.com
+servers:
+- url: https://albato.com/api/v1
+  description: Albato API
+security:
+- ApiKeyAuth: []
+tags:
+- name: Webhooks
+  description: Manage inbound webhooks
+paths:
+  /webhooks:
+    get:
+      operationId: listWebhooks
+      summary: List webhooks
+      description: Returns all inbound webhooks configured for the account.
+      tags:
+      - Webhooks
+      responses:
+        '200':
+          description: List of webhooks
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WebhookList'
+    post:
+      operationId: createWebhook
+      summary: Create a webhook
+      description: Creates a new inbound webhook endpoint.
+      tags:
+      - Webhooks
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WebhookRequest'
+      responses:
+        '201':
+          description: Webhook created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Webhook'
+  /webhooks/{id}:
+    delete:
+      operationId: deleteWebhook
+      summary: Delete a webhook
+      description: Deletes an inbound webhook endpoint.
+      tags:
+      - Webhooks
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '204':
+          description: Webhook deleted
+components:
+  schemas:
+    Webhook:
+      allOf:
+      - $ref: '#/components/schemas/WebhookRequest'
+      - type: object
+        properties:
+          id:
+            type: string
+          url:
+            type: string
+            format: uri
+            description: The webhook endpoint URL to receive events
+          created_at:
+            type: string
+            format: date-time
+    WebhookRequest:
+      type: object
+      required:
+      - name
+      properties:
+        name:
+          type: string
+          description: Display name for this webhook
+        description:
+          type: string
+    WebhookList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Webhook'
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: API key for Albato account access

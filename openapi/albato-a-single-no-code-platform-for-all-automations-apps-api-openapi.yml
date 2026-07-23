@@ -1,0 +1,86 @@
+openapi: 3.0.3
+info:
+  title: Albato Automations Apps API
+  description: REST API for managing automation workflows in the Albato no-code integration platform. Supports creating, reading, updating, enabling, and disabling multi-step automation workflows that connect 1,000+ apps.
+  version: 1.0.0
+  contact:
+    name: Albato Support
+    url: https://albato.com
+servers:
+- url: https://albato.com/api/v1
+  description: Albato API
+security:
+- ApiKeyAuth: []
+tags:
+- name: Apps
+  description: Browse available apps
+paths:
+  /apps:
+    get:
+      operationId: listApps
+      summary: List available apps
+      description: Returns all apps available for integration in Albato.
+      tags:
+      - Apps
+      parameters:
+      - name: category
+        in: query
+        description: Filter by app category
+        schema:
+          type: string
+      - name: search
+        in: query
+        description: Search apps by name
+        schema:
+          type: string
+      - name: limit
+        in: query
+        schema:
+          type: integer
+          default: 50
+      responses:
+        '200':
+          description: List of apps
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AppList'
+components:
+  schemas:
+    App:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        category:
+          type: string
+        description:
+          type: string
+        auth_types:
+          type: array
+          items:
+            type: string
+        triggers_count:
+          type: integer
+        actions_count:
+          type: integer
+        icon_url:
+          type: string
+          format: uri
+    AppList:
+      type: object
+      properties:
+        total:
+          type: integer
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/App'
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: API key for Albato account access
