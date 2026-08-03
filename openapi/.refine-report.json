@@ -1,0 +1,22 @@
+{
+  "provider": "albato-a-single-no-code-platform-for-all-automations",
+  "sources": [
+    "albato-a-single-no-code-platform-for-all-automations-apps-api-openapi.yml",
+    "albato-a-single-no-code-platform-for-all-automations-automations-api-openapi.yml",
+    "albato-a-single-no-code-platform-for-all-automations-connections-api-openapi.yml",
+    "albato-a-single-no-code-platform-for-all-automations-executions-api-openapi.yml",
+    "albato-a-single-no-code-platform-for-all-automations-webhooks-api-openapi.yml"
+  ],
+  "outputs": [
+    "albato-a-single-no-code-platform-for-all-automations-apps-api-openapi.yml",
+    "albato-a-single-no-code-platform-for-all-automations-automations-api-openapi.yml",
+    "albato-a-single-no-code-platform-for-all-automations-connections-api-openapi.yml",
+    "albato-a-single-no-code-platform-for-all-automations-executions-api-openapi.yml",
+    "albato-a-single-no-code-platform-for-all-automations-webhooks-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

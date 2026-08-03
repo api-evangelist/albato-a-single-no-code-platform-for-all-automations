@@ -1,0 +1,519 @@
+{
+  "info": {
+    "_postman_id": "bcbaca7e-2b30-4736-bfc1-78e8473078c6",
+    "name": "Albato Automations Apps Connections API",
+    "description": "REST API for managing automation workflows in the Albato no-code integration platform. Supports creating, reading, updating, enabling, and disabling multi-step automation workflows that connect 1,000+ apps.\n\nContact Support:\n Name: Albato Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T00:29:27.000Z",
+    "updatedAt": "2026-07-28T00:29:27.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-bcbaca7e-2b30-4736-bfc1-78e8473078c6"
+  },
+  "item": [
+    {
+      "name": "connections",
+      "item": [
+        {
+          "name": "{id}",
+          "item": [
+            {
+              "name": "Get a connection",
+              "id": "0a284969-6820-4c14-92d7-f861019d7c24",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/connections/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "connections",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "id": "0f1d001a-23c7-408f-b2d3-e9c21cd9a843",
+                      "key": "id",
+                      "value": "<string>",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "description": "Returns details for a specific app connection."
+              },
+              "response": [
+                {
+                  "id": "42c9d22a-0161-413d-8068-8b72f65d9119",
+                  "name": "Connection details",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/connections/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "connections",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"app\": \"<string>\",\n  \"name\": \"<string>\",\n  \"auth_type\": \"session\",\n  \"credentials\": {\n    \"officia_f\": false\n  },\n  \"id\": \"<string>\",\n  \"status\": \"expired\",\n  \"created_at\": \"<dateTime>\",\n  \"last_used_at\": \"<dateTime>\"\n}",
+                  "createdAt": "2026-07-28T00:29:27.000Z",
+                  "updatedAt": "2026-07-28T00:29:27.000Z",
+                  "uid": "35240-42c9d22a-0161-413d-8068-8b72f65d9119"
+                }
+              ],
+              "createdAt": "2026-07-28T00:29:27.000Z",
+              "updatedAt": "2026-07-28T00:29:27.000Z",
+              "uid": "35240-0a284969-6820-4c14-92d7-f861019d7c24"
+            },
+            {
+              "name": "Delete a connection",
+              "id": "d2fac774-e769-4cdf-925f-b8b1e9864d4f",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/connections/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "connections",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "id": "5206029c-c232-4dbb-b90d-80a659d035e7",
+                      "key": "id",
+                      "value": "<string>",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "description": "Deletes an app connection and disconnects associated automations."
+              },
+              "response": [
+                {
+                  "id": "5b1a5119-d9de-4a03-a30a-ce93381b97ea",
+                  "name": "Connection deleted",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/connections/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "connections",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "No Content",
+                  "code": 204,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T00:29:27.000Z",
+                  "updatedAt": "2026-07-28T00:29:27.000Z",
+                  "uid": "35240-5b1a5119-d9de-4a03-a30a-ce93381b97ea"
+                }
+              ],
+              "createdAt": "2026-07-28T00:29:27.000Z",
+              "updatedAt": "2026-07-28T00:29:27.000Z",
+              "uid": "35240-d2fac774-e769-4cdf-925f-b8b1e9864d4f"
+            }
+          ],
+          "id": "0b2eadb9-0967-4182-b5cd-ea54d4a13b74",
+          "createdAt": "2026-07-28T00:29:27.000Z",
+          "updatedAt": "2026-07-28T00:29:27.000Z",
+          "uid": "35240-0b2eadb9-0967-4182-b5cd-ea54d4a13b74"
+        },
+        {
+          "name": "List connections",
+          "id": "0bc62046-ee50-4f77-bbb2-1a6163f80ace",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/connections?app=<string>&limit=20&offset=0",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "connections"
+              ],
+              "query": [
+                {
+                  "description": "Filter by app identifier",
+                  "key": "app",
+                  "value": "<string>"
+                },
+                {
+                  "key": "limit",
+                  "value": "20"
+                },
+                {
+                  "key": "offset",
+                  "value": "0"
+                }
+              ]
+            },
+            "description": "Returns all app connections for the current account."
+          },
+          "response": [
+            {
+              "id": "507a2bd2-8e59-43ef-b59e-5be356876f65",
+              "name": "List of connections",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/connections?app=<string>&limit=20&offset=0",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "connections"
+                  ],
+                  "query": [
+                    {
+                      "description": "Filter by app identifier",
+                      "key": "app",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "20"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"total\": \"<integer>\",\n  \"items\": [\n    {\n      \"app\": \"<string>\",\n      \"name\": \"<string>\",\n      \"auth_type\": \"session\",\n      \"credentials\": {\n        \"est_ceb\": \"aliqua ullamco tempor aliquip\"\n      },\n      \"id\": \"<string>\",\n      \"status\": \"error\",\n      \"created_at\": \"<dateTime>\",\n      \"last_used_at\": \"<dateTime>\"\n    },\n    {\n      \"app\": \"<string>\",\n      \"name\": \"<string>\",\n      \"auth_type\": \"api_key\",\n      \"credentials\": {\n        \"occaecat_4\": \"veniam do in\",\n        \"Ut_4\": false\n      },\n      \"id\": \"<string>\",\n      \"status\": \"expired\",\n      \"created_at\": \"<dateTime>\",\n      \"last_used_at\": \"<dateTime>\"\n    }\n  ]\n}",
+              "createdAt": "2026-07-28T00:29:27.000Z",
+              "updatedAt": "2026-07-28T00:29:27.000Z",
+              "uid": "35240-507a2bd2-8e59-43ef-b59e-5be356876f65"
+            },
+            {
+              "id": "b145ece2-0b80-419e-9a33-99a087bc52fe",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/connections?app=<string>&limit=20&offset=0",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "connections"
+                  ],
+                  "query": [
+                    {
+                      "description": "Filter by app identifier",
+                      "key": "app",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "20"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    }
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T00:29:27.000Z",
+              "updatedAt": "2026-07-28T00:29:27.000Z",
+              "uid": "35240-b145ece2-0b80-419e-9a33-99a087bc52fe"
+            }
+          ],
+          "createdAt": "2026-07-28T00:29:27.000Z",
+          "updatedAt": "2026-07-28T00:29:27.000Z",
+          "uid": "35240-0bc62046-ee50-4f77-bbb2-1a6163f80ace"
+        },
+        {
+          "name": "Create a connection",
+          "id": "b973366f-a48b-4e68-a509-4037b9988dc8",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"app\": \"<string>\",\n  \"name\": \"<string>\",\n  \"auth_type\": \"oauth2\",\n  \"credentials\": {\n    \"nulla4\": \"aute do Duis\",\n    \"non_b4\": 8560058.590636909\n  }\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/connections",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "connections"
+              ]
+            },
+            "description": "Creates a new app connection using API key or OAuth credentials."
+          },
+          "response": [
+            {
+              "id": "7a936318-7627-40b9-9c81-dc4fe257e1fa",
+              "name": "Connection created",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"app\": \"<string>\",\n  \"name\": \"<string>\",\n  \"auth_type\": \"oauth2\",\n  \"credentials\": {\n    \"nulla4\": \"aute do Duis\",\n    \"non_b4\": 8560058.590636909\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/connections",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "connections"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"app\": \"<string>\",\n  \"name\": \"<string>\",\n  \"auth_type\": \"session\",\n  \"credentials\": {\n    \"officia_f\": false\n  },\n  \"id\": \"<string>\",\n  \"status\": \"expired\",\n  \"created_at\": \"<dateTime>\",\n  \"last_used_at\": \"<dateTime>\"\n}",
+              "createdAt": "2026-07-28T00:29:27.000Z",
+              "updatedAt": "2026-07-28T00:29:27.000Z",
+              "uid": "35240-7a936318-7627-40b9-9c81-dc4fe257e1fa"
+            },
+            {
+              "id": "513de1b8-ba5f-4f91-bd34-499c6db2754b",
+              "name": "Invalid credentials",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"app\": \"<string>\",\n  \"name\": \"<string>\",\n  \"auth_type\": \"oauth2\",\n  \"credentials\": {\n    \"nulla4\": \"aute do Duis\",\n    \"non_b4\": 8560058.590636909\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/connections",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "connections"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T00:29:27.000Z",
+              "updatedAt": "2026-07-28T00:29:27.000Z",
+              "uid": "35240-513de1b8-ba5f-4f91-bd34-499c6db2754b"
+            }
+          ],
+          "createdAt": "2026-07-28T00:29:27.000Z",
+          "updatedAt": "2026-07-28T00:29:27.000Z",
+          "uid": "35240-b973366f-a48b-4e68-a509-4037b9988dc8"
+        }
+      ],
+      "id": "27b2a030-8b07-4f76-bdc3-9c61ec708771",
+      "createdAt": "2026-07-28T00:29:27.000Z",
+      "updatedAt": "2026-07-28T00:29:27.000Z",
+      "uid": "35240-27b2a030-8b07-4f76-bdc3-9c61ec708771"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://albato.com/api/v1"
+    }
+  ]
+}

@@ -1,0 +1,154 @@
+{
+  "info": {
+    "_postman_id": "2726335a-cb50-4086-ad29-6574655400bc",
+    "name": "Albato Automations Apps API",
+    "description": "REST API for managing automation workflows in the Albato no-code integration platform. Supports creating, reading, updating, enabling, and disabling multi-step automation workflows that connect 1,000+ apps.\n\nContact Support:\n Name: Albato Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T00:29:25.000Z",
+    "updatedAt": "2026-07-28T00:29:25.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-2726335a-cb50-4086-ad29-6574655400bc"
+  },
+  "item": [
+    {
+      "name": "apps",
+      "item": [
+        {
+          "name": "List available apps",
+          "id": "bcf388d7-f2ca-4302-bd68-b77f16332969",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/apps?category=<string>&search=<string>&limit=50",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "apps"
+              ],
+              "query": [
+                {
+                  "description": "Filter by app category",
+                  "key": "category",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Search apps by name",
+                  "key": "search",
+                  "value": "<string>"
+                },
+                {
+                  "key": "limit",
+                  "value": "50"
+                }
+              ]
+            },
+            "description": "Returns all apps available for integration in Albato."
+          },
+          "response": [
+            {
+              "id": "86c2208a-0548-46e7-91d3-733548ff2b3b",
+              "name": "List of apps",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/apps?category=<string>&search=<string>&limit=50",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "apps"
+                  ],
+                  "query": [
+                    {
+                      "description": "Filter by app category",
+                      "key": "category",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Search apps by name",
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "50"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"total\": \"<integer>\",\n  \"items\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"category\": \"<string>\",\n      \"description\": \"<string>\",\n      \"auth_types\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"triggers_count\": \"<integer>\",\n      \"actions_count\": \"<integer>\",\n      \"icon_url\": \"<uri>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"category\": \"<string>\",\n      \"description\": \"<string>\",\n      \"auth_types\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"triggers_count\": \"<integer>\",\n      \"actions_count\": \"<integer>\",\n      \"icon_url\": \"<uri>\"\n    }\n  ]\n}",
+              "createdAt": "2026-07-28T00:29:26.000Z",
+              "updatedAt": "2026-07-28T00:29:26.000Z",
+              "uid": "35240-86c2208a-0548-46e7-91d3-733548ff2b3b"
+            }
+          ],
+          "createdAt": "2026-07-28T00:29:25.000Z",
+          "updatedAt": "2026-07-28T00:29:25.000Z",
+          "uid": "35240-bcf388d7-f2ca-4302-bd68-b77f16332969"
+        }
+      ],
+      "id": "5adff7be-d284-4823-93f3-002f9befcb0b",
+      "createdAt": "2026-07-28T00:29:25.000Z",
+      "updatedAt": "2026-07-28T00:29:25.000Z",
+      "uid": "35240-5adff7be-d284-4823-93f3-002f9befcb0b"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://albato.com/api/v1"
+    }
+  ]
+}

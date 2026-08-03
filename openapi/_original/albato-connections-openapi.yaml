@@ -1,0 +1,301 @@
+openapi: 3.0.3
+info:
+  title: Albato Connections API
+  description: >-
+    REST API for managing app connections and webhooks in the Albato no-code
+    integration platform. Supports creating and managing OAuth and API key
+    connections to third-party apps.
+  version: 1.0.0
+  contact:
+    name: Albato Support
+    url: https://albato.com
+servers:
+  - url: https://albato.com/api/v1
+    description: Albato API
+security:
+  - ApiKeyAuth: []
+tags:
+  - name: Connections
+    description: Manage app connections
+  - name: Apps
+    description: Browse available apps
+  - name: Webhooks
+    description: Manage inbound webhooks
+paths:
+  /connections:
+    get:
+      operationId: listConnections
+      summary: List connections
+      description: Returns all app connections for the current account.
+      tags:
+        - Connections
+      parameters:
+        - name: app
+          in: query
+          description: Filter by app identifier
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            default: 20
+        - name: offset
+          in: query
+          schema:
+            type: integer
+            default: 0
+      responses:
+        '200':
+          description: List of connections
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConnectionList'
+        '401':
+          description: Unauthorized
+    post:
+      operationId: createConnection
+      summary: Create a connection
+      description: Creates a new app connection using API key or OAuth credentials.
+      tags:
+        - Connections
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ConnectionRequest'
+      responses:
+        '201':
+          description: Connection created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Connection'
+        '400':
+          description: Invalid credentials
+  /connections/{id}:
+    get:
+      operationId: getConnection
+      summary: Get a connection
+      description: Returns details for a specific app connection.
+      tags:
+        - Connections
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Connection details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Connection'
+    delete:
+      operationId: deleteConnection
+      summary: Delete a connection
+      description: Deletes an app connection and disconnects associated automations.
+      tags:
+        - Connections
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Connection deleted
+  /apps:
+    get:
+      operationId: listApps
+      summary: List available apps
+      description: Returns all apps available for integration in Albato.
+      tags:
+        - Apps
+      parameters:
+        - name: category
+          in: query
+          description: Filter by app category
+          schema:
+            type: string
+        - name: search
+          in: query
+          description: Search apps by name
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            default: 50
+      responses:
+        '200':
+          description: List of apps
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AppList'
+  /webhooks:
+    get:
+      operationId: listWebhooks
+      summary: List webhooks
+      description: Returns all inbound webhooks configured for the account.
+      tags:
+        - Webhooks
+      responses:
+        '200':
+          description: List of webhooks
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WebhookList'
+    post:
+      operationId: createWebhook
+      summary: Create a webhook
+      description: Creates a new inbound webhook endpoint.
+      tags:
+        - Webhooks
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WebhookRequest'
+      responses:
+        '201':
+          description: Webhook created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Webhook'
+  /webhooks/{id}:
+    delete:
+      operationId: deleteWebhook
+      summary: Delete a webhook
+      description: Deletes an inbound webhook endpoint.
+      tags:
+        - Webhooks
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Webhook deleted
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+  schemas:
+    ConnectionRequest:
+      type: object
+      required:
+        - app
+        - name
+      properties:
+        app:
+          type: string
+          description: App identifier to connect
+        name:
+          type: string
+          description: Display name for this connection
+        auth_type:
+          type: string
+          enum: [api_key, oauth2, basic, session]
+        credentials:
+          type: object
+          additionalProperties: true
+          description: Auth credentials specific to the app
+    Connection:
+      allOf:
+        - $ref: '#/components/schemas/ConnectionRequest'
+        - type: object
+          properties:
+            id:
+              type: string
+            status:
+              type: string
+              enum: [active, expired, error]
+            created_at:
+              type: string
+              format: date-time
+            last_used_at:
+              type: string
+              format: date-time
+    ConnectionList:
+      type: object
+      properties:
+        total:
+          type: integer
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Connection'
+    App:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        category:
+          type: string
+        description:
+          type: string
+        auth_types:
+          type: array
+          items:
+            type: string
+        triggers_count:
+          type: integer
+        actions_count:
+          type: integer
+        icon_url:
+          type: string
+          format: uri
+    AppList:
+      type: object
+      properties:
+        total:
+          type: integer
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/App'
+    WebhookRequest:
+      type: object
+      required:
+        - name
+      properties:
+        name:
+          type: string
+          description: Display name for this webhook
+        description:
+          type: string
+    Webhook:
+      allOf:
+        - $ref: '#/components/schemas/WebhookRequest'
+        - type: object
+          properties:
+            id:
+              type: string
+            url:
+              type: string
+              format: uri
+              description: The webhook endpoint URL to receive events
+            created_at:
+              type: string
+              format: date-time
+    WebhookList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Webhook'

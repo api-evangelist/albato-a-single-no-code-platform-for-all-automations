@@ -1,0 +1,177 @@
+{
+  "info": {
+    "_postman_id": "bcc1a798-784d-4d8e-9455-0f5951e6cf0a",
+    "name": "Albato Automations Apps Executions API",
+    "description": "REST API for managing automation workflows in the Albato no-code integration platform. Supports creating, reading, updating, enabling, and disabling multi-step automation workflows that connect 1,000+ apps.\n\nContact Support:\n Name: Albato Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T00:29:28.000Z",
+    "updatedAt": "2026-07-28T00:29:28.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-bcc1a798-784d-4d8e-9455-0f5951e6cf0a"
+  },
+  "item": [
+    {
+      "name": "automations",
+      "item": [
+        {
+          "name": "{id}",
+          "item": [
+            {
+              "name": "executions",
+              "item": [
+                {
+                  "name": "List automation executions",
+                  "id": "fff095a8-5570-4d27-a5ab-fea628b71ae0",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/automations/:id/executions?status=all&limit=20",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "automations",
+                        ":id",
+                        "executions"
+                      ],
+                      "query": [
+                        {
+                          "key": "status",
+                          "value": "all"
+                        },
+                        {
+                          "key": "limit",
+                          "value": "20"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "id": "32d3ab79-b9c3-4834-ac60-4eb553cae5b0",
+                          "key": "id",
+                          "value": "<string>",
+                          "description": "(Required) "
+                        }
+                      ]
+                    },
+                    "description": "Returns execution history for a specific automation."
+                  },
+                  "response": [
+                    {
+                      "id": "f51d369f-184b-4eec-b528-6c7caf07fa46",
+                      "name": "List of executions",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/automations/:id/executions?status=all&limit=20",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "automations",
+                            ":id",
+                            "executions"
+                          ],
+                          "query": [
+                            {
+                              "key": "status",
+                              "value": "all"
+                            },
+                            {
+                              "key": "limit",
+                              "value": "20"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "id"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"total\": \"<integer>\",\n  \"items\": [\n    {\n      \"id\": \"<string>\",\n      \"automation_id\": \"<string>\",\n      \"status\": \"running\",\n      \"started_at\": \"<dateTime>\",\n      \"finished_at\": \"<dateTime>\",\n      \"error_message\": \"<string>\",\n      \"steps_completed\": \"<integer>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"automation_id\": \"<string>\",\n      \"status\": \"success\",\n      \"started_at\": \"<dateTime>\",\n      \"finished_at\": \"<dateTime>\",\n      \"error_message\": \"<string>\",\n      \"steps_completed\": \"<integer>\"\n    }\n  ]\n}",
+                      "createdAt": "2026-07-28T00:29:29.000Z",
+                      "updatedAt": "2026-07-28T00:29:29.000Z",
+                      "uid": "35240-f51d369f-184b-4eec-b528-6c7caf07fa46"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T00:29:29.000Z",
+                  "updatedAt": "2026-07-28T00:29:29.000Z",
+                  "uid": "35240-fff095a8-5570-4d27-a5ab-fea628b71ae0"
+                }
+              ],
+              "id": "fd454c0f-3792-4d0c-abc3-1851dd2844d8",
+              "createdAt": "2026-07-28T00:29:29.000Z",
+              "updatedAt": "2026-07-28T00:29:29.000Z",
+              "uid": "35240-fd454c0f-3792-4d0c-abc3-1851dd2844d8"
+            }
+          ],
+          "id": "0ebf86fa-28c4-460f-b9f9-bc81afc27aee",
+          "createdAt": "2026-07-28T00:29:29.000Z",
+          "updatedAt": "2026-07-28T00:29:29.000Z",
+          "uid": "35240-0ebf86fa-28c4-460f-b9f9-bc81afc27aee"
+        }
+      ],
+      "id": "1f0c7dfa-ec23-4992-bc8e-37ae8aeab728",
+      "createdAt": "2026-07-28T00:29:29.000Z",
+      "updatedAt": "2026-07-28T00:29:29.000Z",
+      "uid": "35240-1f0c7dfa-ec23-4992-bc8e-37ae8aeab728"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://albato.com/api/v1"
+    }
+  ]
+}
