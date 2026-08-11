@@ -280,6 +280,8 @@ apis:
   - type: Example
     url: examples/albato-albato-connections-webhook-example.json
 common:
+  - type: Overlay
+    url: overlays/albato-a-single-no-code-platform-for-all-automations-automations-overlay.yaml
   - type: PostmanWorkspace
     url: https://www.postman.com/kinlaneapi/albato-a-single-no-code-platform-for-all-automations/overview
   - type: AgenticAccess
@@ -324,12 +326,6 @@ common:
     type: ErrorCatalog
   - url: lifecycle/albato-a-single-no-code-platform-for-all-automations-lifecycle.yml
     type: Lifecycle
-  - url: capabilities/shared/automations-api.yaml
-    type: NaftikoCapability
-    title: Albato Automations Shared Capability
-  - url: capabilities/shared/connections-api.yaml
-    type: NaftikoCapability
-    title: Albato Connections Shared Capability
   - url: capabilities/workflow-automation.yaml
     type: NaftikoCapability
     title: Workflow Automation Capability
