@@ -19,266 +19,264 @@ accessModel:
   label: Freemium · Self-serve signup
   confidence: high
   source:
-  - plans
-  - authentication
+    - plans
+    - authentication
   generated: '2026-07-22'
   method: derived
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/albato-a-single-no-code-platform-for-all-automations.png
+image: >-
+  https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/albato-a-single-no-code-platform-for-all-automations.png
 description: >-
-  Albato is a no-code automation platform enabling businesses to automate
-  workflows by integrating 1,000+ apps without writing code. The platform
-  supports multi-step automations with triggers, actions, conditions, and
-  delays, plus embedded iPaaS capabilities for SaaS companies to offer
-  native integrations to their customers.
+  Albato is a no-code automation platform enabling businesses to automate workflows by integrating 1,000+ apps without
+  writing code. The platform supports multi-step automations with triggers, actions, conditions, and delays, plus
+  embedded iPaaS capabilities for SaaS companies to offer native integrations to their customers.
 created: '2026-03-16'
 modified: '2026-06-20'
 specificationVersion: '0.19'
 apis:
-- aid: >-
-    albato-a-single-no-code-platform-for-all-automations:albato-a-single-no-code-platform-for-all-automations-apps-api
-  name: Albato A Single No Code Platform For All Automations Apps API
-  description: Browse available apps
-  humanURL: https://albato.com
-  baseURL: https://albato.com/api/v1
-  tags:
-  - Apps
-  properties:
-  - type: OpenAPI
-    url: openapi/albato-a-single-no-code-platform-for-all-automations-apps-api-openapi.yml
-  - type: Documentation
-    url: https://albato.com
-  - type: JSONSchema
-    url: json-schema/albato-albato-automations-automation-schema.json
-  - type: JSONSchema
-    url: json-schema/albato-albato-automations-automation-step-schema.json
-  - type: JSONSchema
-    url: json-schema/albato-albato-automations-execution-schema.json
-  - type: JSONStructure
-    url: json-structure/albato-albato-automations-automation-structure.json
-  - type: JSONStructure
-    url: json-structure/albato-albato-automations-automation-step-structure.json
-  - type: JSONStructure
-    url: json-structure/albato-albato-automations-execution-structure.json
-  - type: Example
-    url: examples/albato-albato-automations-automation-example.json
-  - type: Example
-    url: examples/albato-albato-automations-automation-step-example.json
-  - type: Example
-    url: examples/albato-albato-automations-execution-example.json
-  - type: JSONSchema
-    url: json-schema/albato-albato-connections-connection-schema.json
-  - type: JSONSchema
-    url: json-schema/albato-albato-connections-app-schema.json
-  - type: JSONSchema
-    url: json-schema/albato-albato-connections-webhook-schema.json
-  - type: JSONStructure
-    url: json-structure/albato-albato-connections-connection-structure.json
-  - type: JSONStructure
-    url: json-structure/albato-albato-connections-app-structure.json
-  - type: JSONStructure
-    url: json-structure/albato-albato-connections-webhook-structure.json
-  - type: Example
-    url: examples/albato-albato-connections-connection-example.json
-  - type: Example
-    url: examples/albato-albato-connections-app-example.json
-  - type: Example
-    url: examples/albato-albato-connections-webhook-example.json
-- aid: >-
-    albato-a-single-no-code-platform-for-all-automations:albato-a-single-no-code-platform-for-all-automations-automations-api
-  name: Albato A Single No Code Platform For All Automations Automations API
-  description: Manage automation workflows
-  humanURL: https://albato.com
-  baseURL: https://albato.com/api/v1
-  tags:
-  - Automations
-  properties:
-  - type: OpenAPI
-    url: openapi/albato-a-single-no-code-platform-for-all-automations-automations-api-openapi.yml
-  - type: Documentation
-    url: https://albato.com
-  - type: JSONSchema
-    url: json-schema/albato-albato-automations-automation-schema.json
-  - type: JSONSchema
-    url: json-schema/albato-albato-automations-automation-step-schema.json
-  - type: JSONSchema
-    url: json-schema/albato-albato-automations-execution-schema.json
-  - type: JSONStructure
-    url: json-structure/albato-albato-automations-automation-structure.json
-  - type: JSONStructure
-    url: json-structure/albato-albato-automations-automation-step-structure.json
-  - type: JSONStructure
-    url: json-structure/albato-albato-automations-execution-structure.json
-  - type: Example
-    url: examples/albato-albato-automations-automation-example.json
-  - type: Example
-    url: examples/albato-albato-automations-automation-step-example.json
-  - type: Example
-    url: examples/albato-albato-automations-execution-example.json
-  - type: JSONSchema
-    url: json-schema/albato-albato-connections-connection-schema.json
-  - type: JSONSchema
-    url: json-schema/albato-albato-connections-app-schema.json
-  - type: JSONSchema
-    url: json-schema/albato-albato-connections-webhook-schema.json
-  - type: JSONStructure
-    url: json-structure/albato-albato-connections-connection-structure.json
-  - type: JSONStructure
-    url: json-structure/albato-albato-connections-app-structure.json
-  - type: JSONStructure
-    url: json-structure/albato-albato-connections-webhook-structure.json
-  - type: Example
-    url: examples/albato-albato-connections-connection-example.json
-  - type: Example
-    url: examples/albato-albato-connections-app-example.json
-  - type: Example
-    url: examples/albato-albato-connections-webhook-example.json
-- aid: >-
-    albato-a-single-no-code-platform-for-all-automations:albato-a-single-no-code-platform-for-all-automations-connections-api
-  name: Albato A Single No Code Platform For All Automations Connections API
-  description: Manage app connections
-  humanURL: https://albato.com
-  baseURL: https://albato.com/api/v1
-  tags:
-  - Connections
-  properties:
-  - type: OpenAPI
-    url: openapi/albato-a-single-no-code-platform-for-all-automations-connections-api-openapi.yml
-  - type: Documentation
-    url: https://albato.com
-  - type: JSONSchema
-    url: json-schema/albato-albato-automations-automation-schema.json
-  - type: JSONSchema
-    url: json-schema/albato-albato-automations-automation-step-schema.json
-  - type: JSONSchema
-    url: json-schema/albato-albato-automations-execution-schema.json
-  - type: JSONStructure
-    url: json-structure/albato-albato-automations-automation-structure.json
-  - type: JSONStructure
-    url: json-structure/albato-albato-automations-automation-step-structure.json
-  - type: JSONStructure
-    url: json-structure/albato-albato-automations-execution-structure.json
-  - type: Example
-    url: examples/albato-albato-automations-automation-example.json
-  - type: Example
-    url: examples/albato-albato-automations-automation-step-example.json
-  - type: Example
-    url: examples/albato-albato-automations-execution-example.json
-  - type: JSONSchema
-    url: json-schema/albato-albato-connections-connection-schema.json
-  - type: JSONSchema
-    url: json-schema/albato-albato-connections-app-schema.json
-  - type: JSONSchema
-    url: json-schema/albato-albato-connections-webhook-schema.json
-  - type: JSONStructure
-    url: json-structure/albato-albato-connections-connection-structure.json
-  - type: JSONStructure
-    url: json-structure/albato-albato-connections-app-structure.json
-  - type: JSONStructure
-    url: json-structure/albato-albato-connections-webhook-structure.json
-  - type: Example
-    url: examples/albato-albato-connections-connection-example.json
-  - type: Example
-    url: examples/albato-albato-connections-app-example.json
-  - type: Example
-    url: examples/albato-albato-connections-webhook-example.json
-- aid: >-
-    albato-a-single-no-code-platform-for-all-automations:albato-a-single-no-code-platform-for-all-automations-executions-api
-  name: Albato A Single No Code Platform For All Automations Executions API
-  description: Monitor automation execution history
-  humanURL: https://albato.com
-  baseURL: https://albato.com/api/v1
-  tags:
-  - Executions
-  properties:
-  - type: OpenAPI
-    url: openapi/albato-a-single-no-code-platform-for-all-automations-executions-api-openapi.yml
-  - type: Documentation
-    url: https://albato.com
-  - type: JSONSchema
-    url: json-schema/albato-albato-automations-automation-schema.json
-  - type: JSONSchema
-    url: json-schema/albato-albato-automations-automation-step-schema.json
-  - type: JSONSchema
-    url: json-schema/albato-albato-automations-execution-schema.json
-  - type: JSONStructure
-    url: json-structure/albato-albato-automations-automation-structure.json
-  - type: JSONStructure
-    url: json-structure/albato-albato-automations-automation-step-structure.json
-  - type: JSONStructure
-    url: json-structure/albato-albato-automations-execution-structure.json
-  - type: Example
-    url: examples/albato-albato-automations-automation-example.json
-  - type: Example
-    url: examples/albato-albato-automations-automation-step-example.json
-  - type: Example
-    url: examples/albato-albato-automations-execution-example.json
-  - type: JSONSchema
-    url: json-schema/albato-albato-connections-connection-schema.json
-  - type: JSONSchema
-    url: json-schema/albato-albato-connections-app-schema.json
-  - type: JSONSchema
-    url: json-schema/albato-albato-connections-webhook-schema.json
-  - type: JSONStructure
-    url: json-structure/albato-albato-connections-connection-structure.json
-  - type: JSONStructure
-    url: json-structure/albato-albato-connections-app-structure.json
-  - type: JSONStructure
-    url: json-structure/albato-albato-connections-webhook-structure.json
-  - type: Example
-    url: examples/albato-albato-connections-connection-example.json
-  - type: Example
-    url: examples/albato-albato-connections-app-example.json
-  - type: Example
-    url: examples/albato-albato-connections-webhook-example.json
-- aid: >-
-    albato-a-single-no-code-platform-for-all-automations:albato-a-single-no-code-platform-for-all-automations-webhooks-api
-  name: Albato A Single No Code Platform For All Automations Webhooks API
-  description: Manage inbound webhooks
-  humanURL: https://albato.com
-  baseURL: https://albato.com/api/v1
-  tags:
-  - Webhooks
-  properties:
-  - type: OpenAPI
-    url: openapi/albato-a-single-no-code-platform-for-all-automations-webhooks-api-openapi.yml
-  - type: Documentation
-    url: https://albato.com
-  - type: JSONSchema
-    url: json-schema/albato-albato-automations-automation-schema.json
-  - type: JSONSchema
-    url: json-schema/albato-albato-automations-automation-step-schema.json
-  - type: JSONSchema
-    url: json-schema/albato-albato-automations-execution-schema.json
-  - type: JSONStructure
-    url: json-structure/albato-albato-automations-automation-structure.json
-  - type: JSONStructure
-    url: json-structure/albato-albato-automations-automation-step-structure.json
-  - type: JSONStructure
-    url: json-structure/albato-albato-automations-execution-structure.json
-  - type: Example
-    url: examples/albato-albato-automations-automation-example.json
-  - type: Example
-    url: examples/albato-albato-automations-automation-step-example.json
-  - type: Example
-    url: examples/albato-albato-automations-execution-example.json
-  - type: JSONSchema
-    url: json-schema/albato-albato-connections-connection-schema.json
-  - type: JSONSchema
-    url: json-schema/albato-albato-connections-app-schema.json
-  - type: JSONSchema
-    url: json-schema/albato-albato-connections-webhook-schema.json
-  - type: JSONStructure
-    url: json-structure/albato-albato-connections-connection-structure.json
-  - type: JSONStructure
-    url: json-structure/albato-albato-connections-app-structure.json
-  - type: JSONStructure
-    url: json-structure/albato-albato-connections-webhook-structure.json
-  - type: Example
-    url: examples/albato-albato-connections-connection-example.json
-  - type: Example
-    url: examples/albato-albato-connections-app-example.json
-  - type: Example
-    url: examples/albato-albato-connections-webhook-example.json
+  - aid: albato-a-single-no-code-platform-for-all-automations:albato-a-single-no-code-platform-for-all-automations-apps-api
+    name: Albato A Single No Code Platform For All Automations Apps API
+    description: Browse available apps
+    humanURL: https://albato.com
+    baseURL: https://albato.com/api/v1
+    tags:
+      - Apps
+    properties:
+      - type: OpenAPI
+        url: openapi/albato-a-single-no-code-platform-for-all-automations-apps-api-openapi.yml
+      - type: Documentation
+        url: https://albato.com
+      - type: JSONSchema
+        url: json-schema/albato-albato-automations-automation-schema.json
+      - type: JSONSchema
+        url: json-schema/albato-albato-automations-automation-step-schema.json
+      - type: JSONSchema
+        url: json-schema/albato-albato-automations-execution-schema.json
+      - type: JSONStructure
+        url: json-structure/albato-albato-automations-automation-structure.json
+      - type: JSONStructure
+        url: json-structure/albato-albato-automations-automation-step-structure.json
+      - type: JSONStructure
+        url: json-structure/albato-albato-automations-execution-structure.json
+      - type: Example
+        url: examples/albato-albato-automations-automation-example.json
+      - type: Example
+        url: examples/albato-albato-automations-automation-step-example.json
+      - type: Example
+        url: examples/albato-albato-automations-execution-example.json
+      - type: JSONSchema
+        url: json-schema/albato-albato-connections-connection-schema.json
+      - type: JSONSchema
+        url: json-schema/albato-albato-connections-app-schema.json
+      - type: JSONSchema
+        url: json-schema/albato-albato-connections-webhook-schema.json
+      - type: JSONStructure
+        url: json-structure/albato-albato-connections-connection-structure.json
+      - type: JSONStructure
+        url: json-structure/albato-albato-connections-app-structure.json
+      - type: JSONStructure
+        url: json-structure/albato-albato-connections-webhook-structure.json
+      - type: Example
+        url: examples/albato-albato-connections-connection-example.json
+      - type: Example
+        url: examples/albato-albato-connections-app-example.json
+      - type: Example
+        url: examples/albato-albato-connections-webhook-example.json
+  - aid: >-
+      albato-a-single-no-code-platform-for-all-automations:albato-a-single-no-code-platform-for-all-automations-automations-api
+    name: Albato A Single No Code Platform For All Automations Automations API
+    description: Manage automation workflows
+    humanURL: https://albato.com
+    baseURL: https://albato.com/api/v1
+    tags:
+      - Automations
+    properties:
+      - type: OpenAPI
+        url: openapi/albato-a-single-no-code-platform-for-all-automations-automations-api-openapi.yml
+      - type: Documentation
+        url: https://albato.com
+      - type: JSONSchema
+        url: json-schema/albato-albato-automations-automation-schema.json
+      - type: JSONSchema
+        url: json-schema/albato-albato-automations-automation-step-schema.json
+      - type: JSONSchema
+        url: json-schema/albato-albato-automations-execution-schema.json
+      - type: JSONStructure
+        url: json-structure/albato-albato-automations-automation-structure.json
+      - type: JSONStructure
+        url: json-structure/albato-albato-automations-automation-step-structure.json
+      - type: JSONStructure
+        url: json-structure/albato-albato-automations-execution-structure.json
+      - type: Example
+        url: examples/albato-albato-automations-automation-example.json
+      - type: Example
+        url: examples/albato-albato-automations-automation-step-example.json
+      - type: Example
+        url: examples/albato-albato-automations-execution-example.json
+      - type: JSONSchema
+        url: json-schema/albato-albato-connections-connection-schema.json
+      - type: JSONSchema
+        url: json-schema/albato-albato-connections-app-schema.json
+      - type: JSONSchema
+        url: json-schema/albato-albato-connections-webhook-schema.json
+      - type: JSONStructure
+        url: json-structure/albato-albato-connections-connection-structure.json
+      - type: JSONStructure
+        url: json-structure/albato-albato-connections-app-structure.json
+      - type: JSONStructure
+        url: json-structure/albato-albato-connections-webhook-structure.json
+      - type: Example
+        url: examples/albato-albato-connections-connection-example.json
+      - type: Example
+        url: examples/albato-albato-connections-app-example.json
+      - type: Example
+        url: examples/albato-albato-connections-webhook-example.json
+  - aid: >-
+      albato-a-single-no-code-platform-for-all-automations:albato-a-single-no-code-platform-for-all-automations-connections-api
+    name: Albato A Single No Code Platform For All Automations Connections API
+    description: Manage app connections
+    humanURL: https://albato.com
+    baseURL: https://albato.com/api/v1
+    tags:
+      - Connections
+    properties:
+      - type: OpenAPI
+        url: openapi/albato-a-single-no-code-platform-for-all-automations-connections-api-openapi.yml
+      - type: Documentation
+        url: https://albato.com
+      - type: JSONSchema
+        url: json-schema/albato-albato-automations-automation-schema.json
+      - type: JSONSchema
+        url: json-schema/albato-albato-automations-automation-step-schema.json
+      - type: JSONSchema
+        url: json-schema/albato-albato-automations-execution-schema.json
+      - type: JSONStructure
+        url: json-structure/albato-albato-automations-automation-structure.json
+      - type: JSONStructure
+        url: json-structure/albato-albato-automations-automation-step-structure.json
+      - type: JSONStructure
+        url: json-structure/albato-albato-automations-execution-structure.json
+      - type: Example
+        url: examples/albato-albato-automations-automation-example.json
+      - type: Example
+        url: examples/albato-albato-automations-automation-step-example.json
+      - type: Example
+        url: examples/albato-albato-automations-execution-example.json
+      - type: JSONSchema
+        url: json-schema/albato-albato-connections-connection-schema.json
+      - type: JSONSchema
+        url: json-schema/albato-albato-connections-app-schema.json
+      - type: JSONSchema
+        url: json-schema/albato-albato-connections-webhook-schema.json
+      - type: JSONStructure
+        url: json-structure/albato-albato-connections-connection-structure.json
+      - type: JSONStructure
+        url: json-structure/albato-albato-connections-app-structure.json
+      - type: JSONStructure
+        url: json-structure/albato-albato-connections-webhook-structure.json
+      - type: Example
+        url: examples/albato-albato-connections-connection-example.json
+      - type: Example
+        url: examples/albato-albato-connections-app-example.json
+      - type: Example
+        url: examples/albato-albato-connections-webhook-example.json
+  - aid: >-
+      albato-a-single-no-code-platform-for-all-automations:albato-a-single-no-code-platform-for-all-automations-executions-api
+    name: Albato A Single No Code Platform For All Automations Executions API
+    description: Monitor automation execution history
+    humanURL: https://albato.com
+    baseURL: https://albato.com/api/v1
+    tags:
+      - Executions
+    properties:
+      - type: OpenAPI
+        url: openapi/albato-a-single-no-code-platform-for-all-automations-executions-api-openapi.yml
+      - type: Documentation
+        url: https://albato.com
+      - type: JSONSchema
+        url: json-schema/albato-albato-automations-automation-schema.json
+      - type: JSONSchema
+        url: json-schema/albato-albato-automations-automation-step-schema.json
+      - type: JSONSchema
+        url: json-schema/albato-albato-automations-execution-schema.json
+      - type: JSONStructure
+        url: json-structure/albato-albato-automations-automation-structure.json
+      - type: JSONStructure
+        url: json-structure/albato-albato-automations-automation-step-structure.json
+      - type: JSONStructure
+        url: json-structure/albato-albato-automations-execution-structure.json
+      - type: Example
+        url: examples/albato-albato-automations-automation-example.json
+      - type: Example
+        url: examples/albato-albato-automations-automation-step-example.json
+      - type: Example
+        url: examples/albato-albato-automations-execution-example.json
+      - type: JSONSchema
+        url: json-schema/albato-albato-connections-connection-schema.json
+      - type: JSONSchema
+        url: json-schema/albato-albato-connections-app-schema.json
+      - type: JSONSchema
+        url: json-schema/albato-albato-connections-webhook-schema.json
+      - type: JSONStructure
+        url: json-structure/albato-albato-connections-connection-structure.json
+      - type: JSONStructure
+        url: json-structure/albato-albato-connections-app-structure.json
+      - type: JSONStructure
+        url: json-structure/albato-albato-connections-webhook-structure.json
+      - type: Example
+        url: examples/albato-albato-connections-connection-example.json
+      - type: Example
+        url: examples/albato-albato-connections-app-example.json
+      - type: Example
+        url: examples/albato-albato-connections-webhook-example.json
+  - aid: >-
+      albato-a-single-no-code-platform-for-all-automations:albato-a-single-no-code-platform-for-all-automations-webhooks-api
+    name: Albato A Single No Code Platform For All Automations Webhooks API
+    description: Manage inbound webhooks
+    humanURL: https://albato.com
+    baseURL: https://albato.com/api/v1
+    tags:
+      - Webhooks
+    properties:
+      - type: OpenAPI
+        url: openapi/albato-a-single-no-code-platform-for-all-automations-webhooks-api-openapi.yml
+      - type: Documentation
+        url: https://albato.com
+      - type: JSONSchema
+        url: json-schema/albato-albato-automations-automation-schema.json
+      - type: JSONSchema
+        url: json-schema/albato-albato-automations-automation-step-schema.json
+      - type: JSONSchema
+        url: json-schema/albato-albato-automations-execution-schema.json
+      - type: JSONStructure
+        url: json-structure/albato-albato-automations-automation-structure.json
+      - type: JSONStructure
+        url: json-structure/albato-albato-automations-automation-step-structure.json
+      - type: JSONStructure
+        url: json-structure/albato-albato-automations-execution-structure.json
+      - type: Example
+        url: examples/albato-albato-automations-automation-example.json
+      - type: Example
+        url: examples/albato-albato-automations-automation-step-example.json
+      - type: Example
+        url: examples/albato-albato-automations-execution-example.json
+      - type: JSONSchema
+        url: json-schema/albato-albato-connections-connection-schema.json
+      - type: JSONSchema
+        url: json-schema/albato-albato-connections-app-schema.json
+      - type: JSONSchema
+        url: json-schema/albato-albato-connections-webhook-schema.json
+      - type: JSONStructure
+        url: json-structure/albato-albato-connections-connection-structure.json
+      - type: JSONStructure
+        url: json-structure/albato-albato-connections-app-structure.json
+      - type: JSONStructure
+        url: json-structure/albato-albato-connections-webhook-structure.json
+      - type: Example
+        url: examples/albato-albato-connections-connection-example.json
+      - type: Example
+        url: examples/albato-albato-connections-app-example.json
+      - type: Example
+        url: examples/albato-albato-connections-webhook-example.json
 common:
   - type: Overlay
     url: overlays/albato-a-single-no-code-platform-for-all-automations-automations-overlay.yaml
@@ -326,65 +324,60 @@ common:
     type: ErrorCatalog
   - url: lifecycle/albato-a-single-no-code-platform-for-all-automations-lifecycle.yml
     type: Lifecycle
-  - url: capabilities/workflow-automation.yaml
-    type: NaftikoCapability
-    title: Workflow Automation Capability
   - type: Features
     data:
       - name: No-Code Automation Builder
         description: >-
-          Visual drag-and-drop automation builder for creating multi-step
-          workflows connecting 1,000+ apps without writing code.
+          Visual drag-and-drop automation builder for creating multi-step workflows connecting 1,000+ apps without
+          writing code.
       - name: Multi-Step Workflows
         description: >-
-          Support for complex automations with conditions, delays, data
-          transformations, and multiple sequential actions.
+          Support for complex automations with conditions, delays, data transformations, and multiple sequential
+          actions.
       - name: 1,000+ App Integrations
         description: >-
-          Pre-built connectors for popular apps including HubSpot, Salesforce,
-          Google Workspace, Slack, Shopify, and hundreds more.
+          Pre-built connectors for popular apps including HubSpot, Salesforce, Google Workspace, Slack, Shopify, and
+          hundreds more.
       - name: Embedded iPaaS
         description: >-
-          White-label integration platform for SaaS companies to embed
-          Albato's automation capabilities natively in their products.
+          White-label integration platform for SaaS companies to embed Albato's automation capabilities natively in
+          their products.
       - name: Webhook Support
-        description: >-
-          Inbound webhooks for real-time event processing, plus webhook
-          subscription management for supported apps.
+        description: Inbound webhooks for real-time event processing, plus webhook subscription management for supported apps.
       - name: OAuth and API Key Authentication
         description: >-
-          Support for all major authentication methods including OAuth 2.0,
-          API key, basic auth, session auth, and custom auth flows.
+          Support for all major authentication methods including OAuth 2.0, API key, basic auth, session auth, and
+          custom auth flows.
       - name: Execution Monitoring
         description: >-
-          Detailed execution history with success/error rates, step-level
-          logging, and real-time notifications for failed automations.
+          Detailed execution history with success/error rates, step-level logging, and real-time notifications for
+          failed automations.
       - name: App Integrator
         description: >-
-          Custom connector builder allowing users to create API connectors
-          from any REST API without development handoff.
+          Custom connector builder allowing users to create API connectors from any REST API without development
+          handoff.
   - type: UseCases
     data:
       - name: CRM and Marketing Automation
         description: >-
-          Sync leads between CRM systems and marketing tools, automate
-          follow-up sequences, and route prospects based on custom conditions.
+          Sync leads between CRM systems and marketing tools, automate follow-up sequences, and route prospects based on
+          custom conditions.
       - name: E-Commerce Order Processing
         description: >-
-          Automate order notifications, inventory updates, shipping tracking,
-          and customer communication across e-commerce platforms.
+          Automate order notifications, inventory updates, shipping tracking, and customer communication across
+          e-commerce platforms.
       - name: SaaS Native Integrations
         description: >-
-          Embed Albato's integration platform in SaaS products to offer
-          customers white-labeled native integrations without in-house development.
+          Embed Albato's integration platform in SaaS products to offer customers white-labeled native integrations
+          without in-house development.
       - name: Data Synchronization
         description: >-
-          Keep data in sync across databases, spreadsheets, and business
-          applications with scheduled and event-driven automations.
+          Keep data in sync across databases, spreadsheets, and business applications with scheduled and event-driven
+          automations.
       - name: Customer Support Automation
         description: >-
-          Route support tickets, trigger notifications, and sync customer
-          data between helpdesk, CRM, and communication tools.
+          Route support tickets, trigger notifications, and sync customer data between helpdesk, CRM, and communication
+          tools.
   - type: Integrations
     data:
       - name: HubSpot
@@ -392,9 +385,7 @@ common:
       - name: Salesforce
         description: Enterprise CRM integration for sales pipeline and customer data workflows.
       - name: Google Workspace
-        description: >-
-          Suite of Google app integrations including Sheets, Drive, Gmail,
-          Calendar, and Forms.
+        description: Suite of Google app integrations including Sheets, Drive, Gmail, Calendar, and Forms.
       - name: Slack
         description: Team messaging integration for notifications and workflow alerts.
       - name: Shopify
