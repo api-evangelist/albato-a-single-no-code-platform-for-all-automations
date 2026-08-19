@@ -31,7 +31,7 @@ description: >-
   embedded iPaaS capabilities for SaaS companies to offer native integrations to their customers.
 created: '2026-03-16'
 modified: '2026-06-20'
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 apis:
   - aid: albato-a-single-no-code-platform-for-all-automations:albato-a-single-no-code-platform-for-all-automations-apps-api
     name: Albato A Single No Code Platform For All Automations Apps API
