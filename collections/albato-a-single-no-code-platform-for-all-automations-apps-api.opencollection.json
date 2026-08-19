@@ -1,0 +1,56 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Albato Automations Apps API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Apps",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List available apps",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://albato.com/api/v1/apps",
+            "params": [
+              {
+                "name": "category",
+                "value": "",
+                "type": "query",
+                "description": "Filter by app category"
+              },
+              {
+                "name": "search",
+                "value": "",
+                "type": "query",
+                "description": "Search apps by name"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns all apps available for integration in Albato."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

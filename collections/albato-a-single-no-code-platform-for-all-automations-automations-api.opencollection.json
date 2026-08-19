@@ -1,0 +1,164 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Albato Apps Automations API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Automations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List automations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://albato.com/api/v1/automations",
+            "params": [
+              {
+                "name": "status",
+                "value": "",
+                "type": "query",
+                "description": "Filter by automation status"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns a list of all automation workflows for the current user."
+        },
+        {
+          "info": {
+            "name": "Create an automation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://albato.com/api/v1/automations",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new automation workflow."
+        },
+        {
+          "info": {
+            "name": "Get an automation",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://albato.com/api/v1/automations/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Returns details for a specific automation workflow."
+        },
+        {
+          "info": {
+            "name": "Update an automation",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://albato.com/api/v1/automations/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates an existing automation workflow."
+        },
+        {
+          "info": {
+            "name": "Delete an automation",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://albato.com/api/v1/automations/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Deletes an automation workflow."
+        },
+        {
+          "info": {
+            "name": "Enable an automation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://albato.com/api/v1/automations/:id/enable",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Activates an automation to begin processing triggers."
+        },
+        {
+          "info": {
+            "name": "Disable an automation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://albato.com/api/v1/automations/:id/disable",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Deactivates an automation to pause processing."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

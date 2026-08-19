@@ -1,0 +1,106 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Albato Automations Apps Connections API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Connections",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List connections",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://albato.com/api/v1/connections",
+            "params": [
+              {
+                "name": "app",
+                "value": "",
+                "type": "query",
+                "description": "Filter by app identifier"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns all app connections for the current account."
+        },
+        {
+          "info": {
+            "name": "Create a connection",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://albato.com/api/v1/connections",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new app connection using API key or OAuth credentials."
+        },
+        {
+          "info": {
+            "name": "Get a connection",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://albato.com/api/v1/connections/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Returns details for a specific app connection."
+        },
+        {
+          "info": {
+            "name": "Delete a connection",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://albato.com/api/v1/connections/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Deletes an app connection and disconnects associated automations."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
