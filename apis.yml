@@ -4,6 +4,13 @@ url: >-
 name: Albato A Single No Code Platform For All Automations
 tags:
   - No-Code Automation
+  - Workflow-Automation
+  - App Integration
+  - Embedded iPaaS
+  - Integration
+  - Webhook
+tags_raw:
+  - No-Code Automation
   - Workflow Automation
   - App Integration
   - Embedded iPaaS
@@ -39,6 +46,8 @@ apis:
     humanURL: https://albato.com
     baseURL: https://albato.com/api/v1
     tags:
+      - Application
+    tags_raw:
       - Apps
     properties:
       - type: OpenAPI
@@ -186,6 +195,8 @@ apis:
     humanURL: https://albato.com
     baseURL: https://albato.com/api/v1
     tags:
+      - Execution
+    tags_raw:
       - Executions
     properties:
       - type: OpenAPI
@@ -235,6 +246,8 @@ apis:
     humanURL: https://albato.com
     baseURL: https://albato.com/api/v1
     tags:
+      - Webhook
+    tags_raw:
       - Webhooks
     properties:
       - type: OpenAPI
