@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
   title: Albato Automations Apps Webhooks API
   description: REST API for managing automation workflows in the Albato no-code integration platform. Supports creating, reading, updating, enabling, and disabling multi-step automation workflows that connect 1,000+ apps.
@@ -80,6 +80,10 @@ components:
           created_at:
             type: string
             format: date-time
+    WebhookList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Webhook'
     WebhookRequest:
       type: object
       required:
@@ -90,10 +94,6 @@ components:
           description: Display name for this webhook
         description:
           type: string
-    WebhookList:
-      type: array
-      items:
-        $ref: '#/components/schemas/Webhook'
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

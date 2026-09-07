@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
   title: Albato Automations Apps Executions API
   description: REST API for managing automation workflows in the Albato no-code integration platform. Supports creating, reading, updating, enabling, and disabling multi-step automation workflows that connect 1,000+ apps.

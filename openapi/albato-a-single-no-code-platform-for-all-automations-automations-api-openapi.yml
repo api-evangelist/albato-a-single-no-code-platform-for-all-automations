@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
   title: Albato Apps Automations API
   description: REST API for managing automation workflows in the Albato no-code integration platform. Supports creating, reading, updating, enabling, and disabling multi-step automation workflows that connect 1,000+ apps.
@@ -178,21 +178,26 @@ paths:
                 $ref: '#/components/schemas/Automation'
 components:
   schemas:
-    AutomationRequest:
+    AutomationStep:
       type: object
-      required:
-      - name
-      - steps
       properties:
-        name:
+        app:
           type: string
-          description: Automation display name
-        description:
+          description: App identifier (e.g., hubspot, google-sheets)
+        type:
           type: string
-        steps:
-          type: array
-          items:
-            $ref: '#/components/schemas/AutomationStep'
+          enum:
+          - trigger
+          - action
+          - condition
+          - delay
+        event:
+          type: string
+          description: Trigger or action event name
+        config:
+          type: object
+          additionalProperties: true
+          description: Step-specific configuration
     Automation:
       allOf:
       - $ref: '#/components/schemas/AutomationRequest'
@@ -227,26 +232,21 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Automation'
-    AutomationStep:
+    AutomationRequest:
       type: object
+      required:
+      - name
+      - steps
       properties:
-        app:
+        name:
           type: string
-          description: App identifier (e.g., hubspot, google-sheets)
-        type:
+          description: Automation display name
+        description:
           type: string
-          enum:
-          - trigger
-          - action
-          - condition
-          - delay
-        event:
-          type: string
-          description: Trigger or action event name
-        config:
-          type: object
-          additionalProperties: true
-          description: Step-specific configuration
+        steps:
+          type: array
+          items:
+            $ref: '#/components/schemas/AutomationStep'
   securitySchemes:
     ApiKeyAuth:
       type: apiKey
